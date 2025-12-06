@@ -4,6 +4,7 @@ import { RefreshCcw, Check, X, ArrowRight, Home } from 'lucide-react';
 
 interface FillBlankModeProps {
   data: Sentence[];
+  levelName: string;
   onExit: () => void;
 }
 
@@ -17,7 +18,7 @@ interface QuestionState {
   isSubmitted: boolean;
 }
 
-const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, onExit }) => {
+const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gameState, setGameState] = useState<QuestionState | null>(null);
   const [score, setScore] = useState(0);
@@ -84,7 +85,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, onExit }) => {
        <div className="flex flex-col items-center justify-center h-full p-6 text-center animate-in zoom-in duration-300">
         <div className="text-6xl mb-4">🏆</div>
         <h2 className="text-3xl font-bold text-slate-800 mb-2">Practice Complete!</h2>
-        <p className="text-slate-600 mb-8 text-lg">You got <span className="text-blue-600 font-bold">{score}</span> out of <span className="font-bold">{data.length}</span> correct.</p>
+        <p className="text-slate-600 mb-8 text-lg">You completed <span className="font-bold">{levelName}</span> with <span className="text-blue-600 font-bold">{score}</span>/{data.length}.</p>
         
         <div className="flex flex-col w-full max-w-xs gap-3">
           <button 
@@ -97,7 +98,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, onExit }) => {
             onClick={onExit}
             className="w-full py-4 bg-white hover:bg-slate-50 text-slate-500 rounded-xl font-bold text-lg border-2 border-slate-200"
           >
-            Back to Menu
+            Back to Levels
           </button>
         </div>
       </div>
@@ -108,14 +109,17 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, onExit }) => {
 
   return (
     <div className="max-w-xl mx-auto w-full flex flex-col min-h-[500px] justify-between py-2">
-      {/* Exit Button */}
-      <div className="flex justify-start mb-2">
-        <button 
+      {/* Header */}
+      <div className="flex justify-between items-center mb-2">
+         <button 
           onClick={onExit}
           className="flex items-center gap-2 text-slate-400 hover:text-slate-600 font-bold text-sm transition-colors px-2 py-1 -ml-2 rounded-lg hover:bg-slate-100"
         >
-          <Home size={18} /> Exit Lesson
+          <Home size={18} /> Exit
         </button>
+        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-3 py-1 rounded-full">
+            {levelName}
+        </span>
       </div>
 
       {/* Header Progress */}

@@ -85,10 +85,22 @@ function App() {
     if (!selectedLevel) return null;
 
     if (gameMode === 'flashcards') {
-      return <FlashcardMode data={selectedLevel.sentences} onExit={handleExitGame} />;
+      return (
+        <FlashcardMode 
+          data={selectedLevel.sentences} 
+          levelName={selectedLevel.name}
+          onExit={handleExitGame} 
+        />
+      );
     }
     
-    return <FillBlankMode data={selectedLevel.sentences} onExit={handleExitGame} />;
+    return (
+      <FillBlankMode 
+        data={selectedLevel.sentences} 
+        levelName={selectedLevel.name}
+        onExit={handleExitGame} 
+      />
+    );
   };
 
   return (

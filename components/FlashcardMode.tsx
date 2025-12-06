@@ -5,10 +5,11 @@ import { RotateCw, CheckCircle, XCircle, RefreshCcw, Home, ArrowLeft, ArrowRight
 
 interface FlashcardModeProps {
   data: Sentence[];
+  levelName: string;
   onExit: () => void;
 }
 
-const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
+const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit }) => {
   const [cards, setCards] = useState<Sentence[]>(data);
   const [swipedCards, setSwipedCards] = useState<{ id: string; result: 'remembered' | 'review' }[]>([]);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -80,7 +81,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
       <div className="flex flex-col items-center justify-center min-h-[400px] p-6 text-center animate-in fade-in duration-500">
         <div className="text-6xl mb-4">🎉</div>
         <h2 className="text-3xl font-bold text-slate-800 mb-2">Great Job!</h2>
-        <p className="text-slate-600 mb-8 text-lg">You finished the deck.</p>
+        <p className="text-slate-600 mb-8 text-lg">You finished <span className="font-bold text-slate-800">{levelName}</span>.</p>
         
         <div className="flex gap-4 mb-8 w-full max-w-sm">
           <div className="flex-1 bg-green-100 p-4 rounded-2xl border border-green-200">
@@ -104,7 +105,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
             onClick={onExit}
             className="w-full py-4 bg-white hover:bg-slate-50 text-slate-500 rounded-xl font-bold text-lg border-2 border-slate-200"
           >
-            Choose Another Mode
+            Choose Another Level
           </button>
         </div>
       </div>
@@ -113,14 +114,17 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
 
   return (
     <div className="relative w-full max-w-md mx-auto min-h-[600px] flex flex-col py-4">
-      {/* Exit Button */}
-      <div className="flex justify-start mb-4">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4">
         <button 
           onClick={onExit}
           className="flex items-center gap-2 text-slate-400 hover:text-slate-600 font-bold text-sm transition-colors px-2 py-1 -ml-2 rounded-lg hover:bg-slate-100"
         >
-          <Home size={18} /> Exit Lesson
+          <Home size={18} /> Exit
         </button>
+        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-3 py-1 rounded-full">
+            {levelName}
+        </span>
       </div>
 
       {/* Progress Bar */}
