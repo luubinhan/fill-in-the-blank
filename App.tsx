@@ -68,11 +68,6 @@ function App() {
               </div>
             </button>
           ))}
-          
-          <button className="w-full bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-left p-6 rounded-2xl transition-all flex items-center justify-between opacity-50 cursor-not-allowed">
-              <span className="text-lg font-bold text-zinc-400">Freeplay</span>
-              <span className="text-2xl">😎</span>
-          </button>
       </div>
     </div>
   );
