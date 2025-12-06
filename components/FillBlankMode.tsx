@@ -107,7 +107,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, onExit }) => {
   if (!gameState) return <div className="p-10 text-center">Loading...</div>;
 
   return (
-    <div className="max-w-xl mx-auto w-full flex flex-col h-full justify-between">
+    <div className="max-w-xl mx-auto w-full flex flex-col min-h-[500px] justify-between py-2">
       {/* Exit Button */}
       <div className="flex justify-start mb-2">
         <button 

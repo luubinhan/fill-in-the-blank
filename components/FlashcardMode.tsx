@@ -77,7 +77,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
 
   if (!activeCard) {
     return (
-      <div className="flex flex-col items-center justify-center h-full p-6 text-center animate-in fade-in duration-500">
+      <div className="flex flex-col items-center justify-center min-h-[400px] p-6 text-center animate-in fade-in duration-500">
         <div className="text-6xl mb-4">🎉</div>
         <h2 className="text-3xl font-bold text-slate-800 mb-2">Great Job!</h2>
         <p className="text-slate-600 mb-8 text-lg">You finished the deck.</p>
@@ -112,7 +112,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
   }
 
   return (
-    <div className="relative w-full max-w-md mx-auto h-[600px] flex flex-col">
+    <div className="relative w-full max-w-md mx-auto min-h-[600px] flex flex-col py-4">
       {/* Exit Button */}
       <div className="flex justify-start mb-4">
         <button 
@@ -135,7 +135,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, onExit }) => {
         Card {swipedCards.length + 1} of {data.length}
       </div>
 
-      <div className="flex-1 relative flex items-center justify-center perspective-1000">
+      <div className="flex-1 relative flex items-center justify-center perspective-1000 min-h-[400px]">
         <AnimatePresence>
             <motion.div
               key={activeCard.id}
