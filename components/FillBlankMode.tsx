@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Sentence } from '../types';
-import { RefreshCcw, Check, X, ArrowRight } from 'lucide-react';
+import { RefreshCcw, Check, X, ArrowRight, ChevronLeft } from 'lucide-react';
 
 interface FillBlankModeProps {
   data: Sentence[];
@@ -73,68 +73,68 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
 
   // Header Component for the game mode
   const GameHeader = () => (
-    <div className="w-full max-w-md mx-auto px-6 py-4 flex justify-between items-center">
+    <div className="w-full max-w-md mx-auto px-6 py-4 flex justify-between items-center pt-8">
       <button 
         onClick={onExit}
-        className="text-blue-600 font-bold text-sm tracking-wider hover:opacity-70 transition-opacity uppercase"
+        className="text-zinc-400 hover:text-white transition-colors"
       >
-        Quit
+        <ChevronLeft size={24} />
       </button>
       <div className="flex flex-col items-end">
-          <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">Quiz</span>
-          <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full mt-1">{levelName}</span>
+          <span className="text-xs font-bold text-zinc-500 tracking-widest uppercase">Quiz</span>
+          <span className="text-[10px] font-bold text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded-full mt-1 border border-zinc-800">{levelName}</span>
       </div>
     </div>
   );
 
   if (isFinished) {
     return (
-       <div className="flex-1 flex flex-col items-center justify-center p-8 text-center animate-in zoom-in duration-300 bg-white">
-        <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+       <div className="flex-1 flex flex-col items-center justify-center p-8 text-center animate-in zoom-in duration-300 bg-black">
+        <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
              <span className="text-4xl">🏆</span>
         </div>
-        <h2 className="text-3xl font-bold text-slate-800 mb-2">Practice Complete!</h2>
-        <p className="text-slate-600 mb-8 max-w-xs mx-auto">
-            You scored <span className="text-blue-600 font-bold">{score}</span> out of {data.length}. Keep up the great work!
+        <h2 className="text-3xl font-bold text-white mb-2">Practice Complete!</h2>
+        <p className="text-zinc-400 mb-8 max-w-xs mx-auto">
+            You scored <span className="text-emerald-400 font-bold">{score}</span> out of {data.length}.
         </p>
         
         <div className="w-full max-w-xs space-y-4">
           <button 
             onClick={handleRestart}
-            className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold tracking-wider uppercase shadow-lg shadow-blue-200 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+            className="w-full py-4 bg-emerald-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-emerald-500 transition-all flex items-center justify-center gap-2"
           >
             <RefreshCcw size={18} /> Try Again
           </button>
           <button 
             onClick={onExit}
-            className="w-full py-4 bg-white text-slate-400 font-bold tracking-wider uppercase hover:text-slate-600 transition-colors"
+            className="w-full py-4 bg-zinc-900 border border-zinc-800 text-zinc-400 font-bold tracking-wider uppercase hover:text-white hover:bg-zinc-800 transition-colors"
           >
-            Back to Modes
+            Done
           </button>
         </div>
       </div>
     );
   }
 
-  if (!gameState) return <div className="p-10 text-center">Loading...</div>;
+  if (!gameState) return <div className="p-10 text-center text-white">Loading...</div>;
 
   return (
-    <div className="flex-1 flex flex-col bg-white">
+    <div className="flex-1 flex flex-col bg-black">
       <GameHeader />
       
       <div className="max-w-md mx-auto w-full px-6 pb-6 flex-1 flex flex-col">
         {/* Progress */}
         <div className="flex items-center justify-between mb-8">
-            <span className="font-bold text-slate-300 text-xs tracking-widest uppercase">Question {currentIndex + 1}/{data.length}</span>
-            <div className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <span className="font-bold text-zinc-500 text-xs tracking-widest uppercase">Question {currentIndex + 1}/{data.length}</span>
+            <div className="bg-zinc-900 border border-zinc-800 text-zinc-300 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             Score: {score}
             </div>
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 mb-6 flex-1 flex flex-col justify-center items-center">
+        <div className="bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 mb-6 flex-1 flex flex-col justify-center items-center">
             
-            <div className="text-2xl sm:text-3xl font-bold text-slate-800 leading-relaxed flex flex-wrap gap-x-2 gap-y-4 justify-center items-center text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-white leading-relaxed flex flex-wrap gap-x-2 gap-y-4 justify-center items-center text-center">
             {gameState.parts.map((word, idx) => {
                 if (idx === gameState.hiddenWordIndex) {
                 const punctuation = word.replace(/[a-zA-Z]/g, ''); 
@@ -152,9 +152,9 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
                             min-w-[100px] w-[140px] text-center border-b-2 bg-transparent px-2 py-1 outline-none transition-all font-sans font-bold
                             ${gameState.isSubmitted 
                             ? gameState.isCorrect 
-                                ? 'border-green-400 text-green-600' 
-                                : 'border-red-400 text-red-500'
-                            : 'border-blue-300 text-blue-600 focus:border-blue-500'
+                                ? 'border-emerald-500 text-emerald-500' 
+                                : 'border-rose-500 text-rose-500'
+                            : 'border-indigo-500 text-indigo-400 focus:border-indigo-300'
                             }
                         `}
                         placeholder="_____"
@@ -166,18 +166,18 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
                     </div>
                 );
                 }
-                return <span key={idx} className="text-slate-700">{word}</span>;
+                return <span key={idx} className="text-zinc-200">{word}</span>;
             })}
             </div>
 
             {/* Translation Hint */}
-            <div className="mt-8 p-4 bg-slate-50 rounded-xl text-center w-full">
-            <p className="text-slate-400 italic text-sm font-medium">"{data[currentIndex].translation}"</p>
+            <div className="mt-8 p-4 bg-black/20 rounded-xl text-center w-full">
+            <p className="text-zinc-500 italic text-sm font-medium">"{data[currentIndex].translation}"</p>
             </div>
 
             {/* Feedback */}
             {gameState.isSubmitted && (
-            <div className={`mt-6 flex items-center gap-2 ${gameState.isCorrect ? 'text-green-500' : 'text-red-500'} font-bold animate-in fade-in`}>
+            <div className={`mt-6 flex items-center gap-2 ${gameState.isCorrect ? 'text-emerald-500' : 'text-rose-500'} font-bold animate-in fade-in`}>
                 {gameState.isCorrect ? <Check size={20} /> : <X size={20} />}
                 <span>{gameState.isCorrect ? 'Correct!' : `Answer: ${gameState.hiddenWord}`}</span>
             </div>
@@ -190,14 +190,14 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
             <button 
                 onClick={handleSubmit}
                 disabled={!gameState.userAnswer}
-                className="w-full py-4 bg-blue-600 disabled:bg-slate-200 disabled:shadow-none hover:bg-blue-700 text-white rounded-2xl font-bold tracking-wider uppercase shadow-lg shadow-blue-200 hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                className="w-full py-4 bg-indigo-600 disabled:bg-zinc-800 disabled:text-zinc-600 hover:bg-indigo-500 text-white rounded-2xl font-bold tracking-wider uppercase transition-all"
             >
                 Check Answer
             </button>
             ) : (
             <button 
                 onClick={handleNext}
-                className="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold tracking-wider uppercase shadow-lg shadow-green-200 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-white text-black hover:bg-zinc-200 rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2"
             >
                 Next <ArrowRight size={20} />
             </button>
