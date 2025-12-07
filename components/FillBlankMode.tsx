@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Sentence } from '../types';
 import { RefreshCcw, Check, X, ArrowRight, ChevronLeft } from 'lucide-react';
 
@@ -53,23 +53,35 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
     }
   }, [currentIndex, data]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!gameState || gameState.isSubmitted) return;
     const isCorrect = gameState.userAnswer.toLowerCase().trim() === gameState.hiddenWord.toLowerCase();
     setGameState(prev => prev ? { ...prev, isCorrect, isSubmitted: true } : null);
     if (isCorrect) setScore(s => s + 1);
   };
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex(prev => prev + 1);
-  };
+  }, []);
 
   const handleRestart = () => {
     setScore(0);
     setCurrentIndex(0);
     setIsFinished(false);
   };
+
+  // Keyboard navigation for 'Next'
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Only allow Next via Right Arrow if submitted
+      if (gameState?.isSubmitted && e.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameState?.isSubmitted, handleNext]);
 
   // Header Component for the game mode
   const GameHeader = () => (
@@ -188,7 +200,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
         <div className="mt-auto">
             {!gameState.isSubmitted ? (
             <button 
-                onClick={handleSubmit}
+                onClick={() => handleSubmit()}
                 disabled={!gameState.userAnswer}
                 className="w-full py-4 bg-indigo-600 disabled:bg-zinc-800 disabled:text-zinc-600 hover:bg-indigo-500 text-white rounded-2xl font-bold tracking-wider uppercase transition-all"
             >
@@ -198,6 +210,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit }
             <button 
                 onClick={handleNext}
                 className="w-full py-4 bg-white text-black hover:bg-zinc-200 rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2"
+                title="Next (Right Arrow)"
             >
                 Next <ArrowRight size={20} />
             </button>

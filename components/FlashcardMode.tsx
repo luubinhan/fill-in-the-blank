@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Sentence } from '../types';
 import { RotateCw, RefreshCcw, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 
@@ -21,29 +21,46 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit }
 
   const activeCard = data[currentIndex];
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setIsFlipped(false);
-    // Small timeout to allow the card to flip back visually before changing content if desired,
-    // but immediate change is snappier for this UI.
     if (currentIndex < data.length - 1) {
       setTimeout(() => setCurrentIndex(prev => prev + 1), 150);
     } else {
       setCompleted(true);
     }
-  };
+  }, [currentIndex, data.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setIsFlipped(false);
     if (currentIndex > 0) {
       setTimeout(() => setCurrentIndex(prev => prev - 1), 150);
     }
-  };
+  }, [currentIndex]);
 
   const handleRestart = () => {
     setCurrentIndex(0);
     setCompleted(false);
     setIsFlipped(false);
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (completed) return;
+
+      if (e.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        handleNext();
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault(); // Prevent scrolling
+        setIsFlipped(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleNext, handlePrev, completed]);
 
   // Header Component for the game mode
   const GameHeader = () => (
@@ -120,7 +137,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit }
                     {activeCard?.english}
                    </h3>
                    <div className="mt-8 text-zinc-500 text-xs uppercase tracking-widest flex items-center gap-2">
-                     <RotateCw size={12} /> Tap to flip
+                     <RotateCw size={12} /> Tap to flip <span className="hidden sm:inline">(Space)</span>
                    </div>
                 </div>
 
@@ -150,6 +167,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit }
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
               disabled={currentIndex === 0}
               className="flex-1 py-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-800 transition-all"
+              title="Previous Card (Left Arrow)"
             >
                 <ChevronLeft className="w-6 h-6" />
                 <span className="ml-2 font-bold uppercase tracking-wider text-sm">Prev</span>
@@ -162,6 +180,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit }
             <button 
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
               className="flex-1 py-4 rounded-2xl bg-indigo-600 shadow-lg shadow-indigo-900/30 flex items-center justify-center text-white hover:bg-indigo-500 transition-all"
+              title="Next Card (Right Arrow)"
             >
                 <span className="mr-2 font-bold uppercase tracking-wider text-sm">
                   {currentIndex === data.length - 1 ? 'Finish' : 'Next'}
