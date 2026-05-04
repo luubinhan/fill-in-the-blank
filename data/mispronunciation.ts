@@ -6,6 +6,26 @@ export const Mispronunciation = {
   difficulty: 'easy',
   sentences: [
     {
+      english: "instance",
+      translation: "/ˈɪn.stəns/"
+    },
+    {
+      english: "start",
+      translation: "/stɑːt/"
+    },
+    {
+      english: "exercise",
+      translation: "/ˈek.sə.saɪz/"
+    },
+    {
+      english: "organized",
+      translation: "/ˈɔː.ɡən.aɪzd/"
+    },
+    {
+      english: "basis",
+      translation: "(bay-sis)"
+    },
+    {
       english: "sharp",
       translation: "/ʃɑːp/ (focus on the 'ar')"
     },
