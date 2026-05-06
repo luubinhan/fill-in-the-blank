@@ -28,10 +28,10 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel }) => {
       {SPEAKING_LEVELS.map((level, idx) => (
         <div
           key={idx}
-          className="bg-zinc-900 border border-zinc-800 text-left p-6 rounded-2xl transition-all"
+          className="bg-zinc-900 border flex flex-col border-zinc-800 text-left p-6 rounded-2xl transition-all"
         >
-          <div className="flex items-center mb-4">
-            <div className={`text-2xl ${randomColors[idx]} mr-4 font-bold rounded-full w-10 h-10 flex items-center justify-center`}>
+          <div className="flex mb-4">
+            <div className={`text-2xl ${randomColors[idx]} mr-4 font-bold rounded-full w-10 min-w-10 h-10 flex items-center justify-center`}>
               {level.name.charAt(0)}
             </div>
             <div className="flex flex-col">
@@ -45,7 +45,7 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel }) => {
           </div>
 
           {/* Mode Selection Buttons */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 mt-auto">
             <button
               onClick={() => onSelectLevel(level, 'flashcards')}
               className="bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 p-4 rounded-xl transition-all flex flex-col items-center gap-2"
