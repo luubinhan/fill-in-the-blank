@@ -9,7 +9,7 @@ import ScreenHeader from './components/ScreenHeader';
 import { Layers, PenTool} from 'lucide-react';
 import { prepareGameData } from './utils/dataUtils';
 
-import { SPEAKING_LEVELS } from './data/speaking-placeholder';
+import { SPEAKING_LEVELS } from './data/speaking-tourism';
 
 const ALL_LEVELS = [...LEVELS, ...SPEAKING_LEVELS];
 

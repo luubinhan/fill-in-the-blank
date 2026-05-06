@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Level, GameMode } from '../types';
-import { SPEAKING_LEVELS } from '../data/speaking-placeholder';
+import { SPEAKING_LEVELS } from '../data/speaking-tourism';
 import { Layers, PenTool } from 'lucide-react';
 
 interface SpeakingViewProps {
