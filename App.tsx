@@ -5,7 +5,8 @@ import FlashcardMode from './components/FlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
 import VocabularyMode from './components/VocabularyMode';
 import SpeakingView from './components/SpeakingView';
-import { Layers, PenTool, LayoutGrid, Mic } from 'lucide-react';
+import ScreenHeader from './components/ScreenHeader';
+import { Layers, PenTool} from 'lucide-react';
 import { prepareGameData } from './utils/dataUtils';
 
 import { SPEAKING_LEVELS } from './data/speaking-placeholder';
@@ -119,26 +120,24 @@ function App() {
     window.history.replaceState(null, '', `${window.location.pathname}?${search}`);
   };
 
+  const homeClick = () => {
+    setView('levels');
+    const levelsPath = window.location.pathname.replace(/\/speaking\/?$/, '') || '/';
+    window.history.replaceState(null, '', levelsPath);
+  }
+  const speakingClick = () => {
+    setView('speaking');
+    const speakingPath = window.location.pathname.replace(/\/?$/, '') + '/speaking';
+    window.history.replaceState(null, '', speakingPath);
+  }
+
   // --- Level Selection View ---
   const renderLevelSelection = () => (
     <div className="min-h-screen max-w-7xl bg-black flex flex-col p-6 mx-auto w-full">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-10 pt-4">
-        <div className="text-zinc-400">
-          <LayoutGrid size={24} />
-        </div>
-        <button
-          onClick={() => {
-            setView('speaking');
-            const speakingPath = window.location.pathname.replace(/\/?$/, '') + '/speaking';
-            window.history.replaceState(null, '', speakingPath);
-          }}
-          className="flex items-center gap-2 text-zinc-400 hover:text-violet-400 transition-colors text-sm font-bold uppercase tracking-wider"
-        >
-          <Mic size={18} />
-          Speaking
-        </button>
-      </div>
+      <ScreenHeader
+        onHomeClick={homeClick}
+        onSpeakingClick={speakingClick}
+      />
 
       {/* Levels List - Styled as Goals */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
@@ -233,14 +232,15 @@ function App() {
   };
 
   const renderSpeakingView = () => (
-    <SpeakingView
-      onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}
-      onBack={() => {
-        setView('levels');
-        const levelsPath = window.location.pathname.replace(/\/speaking\/?$/, '') || '/';
-        window.history.replaceState(null, '', levelsPath);
-      }}
-    />
+    <div className="min-h-screen max-w-7xl bg-black flex flex-col p-6 mx-auto w-full">
+      <ScreenHeader
+        onHomeClick={homeClick}
+        onSpeakingClick={speakingClick}
+      />
+      <SpeakingView
+        onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}
+      />
+    </div>
   );
 
   return (
