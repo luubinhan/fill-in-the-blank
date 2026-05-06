@@ -16,19 +16,29 @@ export const Family = {
             vietnamese: "chắc chắn"
         },
         {
-            english: "they provide us with _______ support whenever we face challenges",
+            english: "they provide us with unwavering support whenever we face challenges",
             translation: "unwavering",
             vietnamese: "vững chắc"
         },
         {
-            english: "Family truly serves as the foundation for building a happy and stable life",
-            translation: "building",
-            vietnamese: "xây dựng"
+            english: "It's always a trade-off between speed and quality. What we want here is a fix that works properly in an acceptable time frame",
+            translation: "time frame",
+            vietnamese: "khung thời gian"
         },
         {
-            english: "For me, everything I do, every effort I make, is ultimately driven by my desire to give my family a better life",
-            translation: "ultimately driven",
-            vietnamese: "cuối cùng được thúc đẩy"
+            english: "The team needs time to analyze the root cause and ensure the quality of their work.",
+            translation: "analyze",
+            vietnamese: "phân tích"
+        },
+        {
+            english: "Then he also helped the team find the solution.",
+            translation: "find",
+            vietnamese: "tìm"
+        },
+        {
+            english: "I was really impressed by the way he handled such an urgent situation.",
+            translation: "impressed",
+            vietnamese: "ấn tượng"
         },
     ]
 } satisfies Level;
