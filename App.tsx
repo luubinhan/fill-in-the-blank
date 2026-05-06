@@ -137,6 +137,7 @@ function App() {
       <ScreenHeader
         onHomeClick={homeClick}
         onSpeakingClick={speakingClick}
+        view={view}
       />
 
       {/* Levels List - Styled as Goals */}
@@ -236,6 +237,7 @@ function App() {
       <ScreenHeader
         onHomeClick={homeClick}
         onSpeakingClick={speakingClick}
+        view={view}
       />
       <SpeakingView
         onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}

@@ -6,7 +6,7 @@ export const Tourism = {
     difficulty: 'medium',
     sentences: [
       {
-        english: "I think tourism is great for the",
+        english: "I think tourism is great for the economy.",
         translation: "economy",
         vietnamese: "kinh tế"
       },
