@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { LEVELS } from './constants';
 import { GameMode, ViewState, Level } from './types';
 import FlashcardMode from './components/FlashcardMode';
+import SpeakingFlashcardMode from './components/SpeakingFlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
 import VocabularyMode from './components/VocabularyMode';
 import SpeakingView from './components/SpeakingView';
@@ -195,6 +196,19 @@ function App() {
       : prepareGameData(selectedLevel.sentences);
 
     if (gameMode === 'flashcards') {
+      if (sourceView === 'speaking') {
+        return (
+          <SpeakingFlashcardMode 
+            key={gameKey}
+            data={gameData} 
+            levelName={selectedLevel.name}
+            onExit={handleExitGame} 
+            onNextGame={handleNextGame}
+            onAnotherLevel={handleAnotherLevelSameMode}
+          />
+        );
+      }
+
       return (
         <FlashcardMode 
           key={gameKey}
