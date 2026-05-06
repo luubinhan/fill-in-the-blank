@@ -6,7 +6,7 @@ export interface Sentence {
 
 export type GameMode = 'flashcards' | 'fill-blank';
 
-export type ViewState = 'levels' | 'game';
+export type ViewState = 'levels' | 'speaking' | 'game';
 
 export interface Level {
   name: string;

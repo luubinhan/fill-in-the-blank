@@ -4,37 +4,47 @@ import { GameMode, ViewState, Level } from './types';
 import FlashcardMode from './components/FlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
 import VocabularyMode from './components/VocabularyMode';
-import { Layers, PenTool, LayoutGrid } from 'lucide-react';
+import SpeakingView from './components/SpeakingView';
+import { Layers, PenTool, LayoutGrid, Mic } from 'lucide-react';
 import { prepareGameData } from './utils/dataUtils';
+
+import { SPEAKING_LEVELS } from './data/speaking-placeholder';
+
+const ALL_LEVELS = [...LEVELS, ...SPEAKING_LEVELS];
 
 function getInitialStateFromURL(): {
   view: ViewState;
   gameMode: GameMode;
   selectedLevel: Level | null;
+  sourceView: 'levels' | 'speaking';
 } {
+  const pathname = window.location.pathname;
+  const isSpeakingPath = pathname.endsWith('/speaking') || pathname.endsWith('/speaking/');
+
   const params = new URLSearchParams(window.location.search);
   const levelParam = params.get('level');
   const modeParam = params.get('mode');
 
   if (!levelParam || !modeParam) {
-    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null };
+    return { view: isSpeakingPath ? 'speaking' : 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: isSpeakingPath ? 'speaking' : 'levels' };
   }
 
   const validModes: GameMode[] = ['flashcards', 'fill-blank'];
   const mode = validModes.includes(modeParam as GameMode) ? (modeParam as GameMode) : null;
   if (!mode) {
-    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null };
+    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: 'levels' };
   }
 
   const decodedLevelName = decodeURIComponent(levelParam).trim();
-  const level = LEVELS.find(
+  const level = ALL_LEVELS.find(
     (l) => l.name.trim().toLowerCase() === decodedLevelName.toLowerCase()
   );
   if (!level) {
-    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null };
+    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: 'levels' };
   }
 
-  return { view: 'game', gameMode: mode, selectedLevel: level };
+  const source = isSpeakingPath ? 'speaking' : 'levels';
+  return { view: 'game', gameMode: mode, selectedLevel: level, sourceView: source };
 }
 
 function App() {
@@ -57,24 +67,36 @@ function App() {
   const [gameMode, setGameMode] = useState<GameMode>(initialState.gameMode);
   const [selectedLevel, setSelectedLevel] = useState<Level | null>(initialState.selectedLevel);
   const [gameKey, setGameKey] = useState(0);
+  const [sourceView, setSourceView] = useState<'levels' | 'speaking'>(initialState.sourceView);
 
-  const handleLevelAndModeSelect = (level: Level, mode: GameMode) => {
+  const handleLevelAndModeSelect = (level: Level, mode: GameMode, source: 'levels' | 'speaking' = 'levels') => {
     setSelectedLevel(level);
     setGameMode(mode);
     setGameKey(0);
+    setSourceView(source);
     setView('game');
     const search = new URLSearchParams({
       level: level.name,
       difficulty: level.difficulty,
       mode,
     }).toString();
-    window.history.replaceState(null, '', `${window.location.pathname}?${search}`);
+    const basePath = source === 'speaking'
+      ? window.location.pathname.replace(/\/?$/, '').replace(/\/speaking\/?$/, '') + '/speaking'
+      : window.location.pathname.replace(/\/speaking\/?$/, '');
+    window.history.replaceState(null, '', `${basePath}?${search}`);
   };
 
   const handleExitGame = () => {
     setSelectedLevel(null);
-    setView('levels');
-    window.history.replaceState(null, '', window.location.pathname);
+    setView(sourceView);
+    const basePath = window.location.pathname.replace(/\?.*$/, '');
+    if (sourceView === 'speaking') {
+      const speakingPath = basePath.endsWith('/speaking') ? basePath : basePath.replace(/\/?$/, '') + '/speaking';
+      window.history.replaceState(null, '', speakingPath);
+    } else {
+      const levelsPath = basePath.replace(/\/speaking\/?$/, '') || '/';
+      window.history.replaceState(null, '', levelsPath);
+    }
   };
 
   const handleNextGame = () => {
@@ -84,7 +106,8 @@ function App() {
 
   const handleAnotherLevelSameMode = () => {
     if (!selectedLevel) return;
-    const others = LEVELS.filter((l) => l.name !== selectedLevel.name);
+    const pool = sourceView === 'speaking' ? SPEAKING_LEVELS : LEVELS;
+    const others = pool.filter((l) => l.name !== selectedLevel.name);
     const level = others.length > 0 ? others[Math.floor(Math.random() * others.length)] : selectedLevel;
     setSelectedLevel(level);
     setGameKey((prev) => prev + 1);
@@ -104,6 +127,17 @@ function App() {
         <div className="text-zinc-400">
           <LayoutGrid size={24} />
         </div>
+        <button
+          onClick={() => {
+            setView('speaking');
+            const speakingPath = window.location.pathname.replace(/\/?$/, '') + '/speaking';
+            window.history.replaceState(null, '', speakingPath);
+          }}
+          className="flex items-center gap-2 text-zinc-400 hover:text-violet-400 transition-colors text-sm font-bold uppercase tracking-wider"
+        >
+          <Mic size={18} />
+          Speaking
+        </button>
       </div>
 
       {/* Levels List - Styled as Goals */}
@@ -156,7 +190,9 @@ function App() {
   const renderGame = () => {
     if (!selectedLevel) return null;
 
-    const gameData = prepareGameData(selectedLevel.sentences);
+    const gameData = sourceView === 'speaking'
+      ? selectedLevel.sentences
+      : prepareGameData(selectedLevel.sentences);
 
     if (gameMode === 'flashcards') {
       return (
@@ -196,9 +232,21 @@ function App() {
     );
   };
 
+  const renderSpeakingView = () => (
+    <SpeakingView
+      onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}
+      onBack={() => {
+        setView('levels');
+        const levelsPath = window.location.pathname.replace(/\/speaking\/?$/, '') || '/';
+        window.history.replaceState(null, '', levelsPath);
+      }}
+    />
+  );
+
   return (
     <div className="font-sans selection:bg-indigo-500/30">
       {view === 'levels' && renderLevelSelection()}
+      {view === 'speaking' && renderSpeakingView()}
       {view === 'game' && renderGame()}
     </div>
   );
