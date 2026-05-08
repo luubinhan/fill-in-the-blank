@@ -20,10 +20,8 @@ function getInitialStateFromURL(): {
   selectedLevel: Level | null;
   sourceView: 'levels' | 'speaking';
 } {
-  const pathname = window.location.pathname;
-  const isSpeakingPath = pathname.endsWith('/speaking') || pathname.endsWith('/speaking/');
-
   const params = new URLSearchParams(window.location.search);
+  const isSpeakingPath = params.has('speaking');
   const levelParam = params.get('level');
   const modeParam = params.get('mode');
 
@@ -47,6 +45,14 @@ function getInitialStateFromURL(): {
 
   const source = isSpeakingPath ? 'speaking' : 'levels';
   return { view: 'game', gameMode: mode, selectedLevel: level, sourceView: source };
+}
+
+function buildSearchWithSpeakingFlag(searchParams: URLSearchParams, includeSpeaking: boolean): string {
+  const query = searchParams.toString();
+  if (!includeSpeaking) {
+    return query ? `?${query}` : '';
+  }
+  return query ? `?speaking&${query}` : '?speaking';
 }
 
 function App() {
@@ -77,27 +83,26 @@ function App() {
     setGameKey(0);
     setSourceView(source);
     setView('game');
-    const search = new URLSearchParams({
+    const searchParams = new URLSearchParams({
       level: level.name,
       difficulty: level.difficulty,
       mode,
-    }).toString();
-    const basePath = source === 'speaking'
-      ? window.location.pathname.replace(/\/?$/, '').replace(/\/speaking\/?$/, '') + '/speaking'
-      : window.location.pathname.replace(/\/speaking\/?$/, '');
-    window.history.replaceState(null, '', `${basePath}?${search}`);
+    });
+    if (source === 'speaking') {
+      window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, true)}`);
+      return;
+    }
+    window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, false)}`);
   };
 
   const handleExitGame = () => {
     setSelectedLevel(null);
     setView(sourceView);
-    const basePath = window.location.pathname.replace(/\?.*$/, '');
+    const basePath = window.location.pathname;
     if (sourceView === 'speaking') {
-      const speakingPath = basePath.endsWith('/speaking') ? basePath : basePath.replace(/\/?$/, '') + '/speaking';
-      window.history.replaceState(null, '', speakingPath);
+      window.history.replaceState(null, '', `${basePath}?speaking`);
     } else {
-      const levelsPath = basePath.replace(/\/speaking\/?$/, '') || '/';
-      window.history.replaceState(null, '', levelsPath);
+      window.history.replaceState(null, '', basePath || '/');
     }
   };
 
@@ -113,23 +118,25 @@ function App() {
     const level = others.length > 0 ? others[Math.floor(Math.random() * others.length)] : selectedLevel;
     setSelectedLevel(level);
     setGameKey((prev) => prev + 1);
-    const search = new URLSearchParams({
+    const searchParams = new URLSearchParams({
       level: level.name,
       difficulty: level.difficulty,
       mode: gameMode,
-    }).toString();
-    window.history.replaceState(null, '', `${window.location.pathname}?${search}`);
+    });
+    if (sourceView === 'speaking') {
+      window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, true)}`);
+      return;
+    }
+    window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, false)}`);
   };
 
   const homeClick = () => {
     setView('levels');
-    const levelsPath = window.location.pathname.replace(/\/speaking\/?$/, '') || '/';
-    window.history.replaceState(null, '', levelsPath);
+    window.history.replaceState(null, '', window.location.pathname || '/');
   }
   const speakingClick = () => {
     setView('speaking');
-    const speakingPath = window.location.pathname.replace(/\/?$/, '') + '/speaking';
-    window.history.replaceState(null, '', speakingPath);
+    window.history.replaceState(null, '', `${window.location.pathname}?speaking`);
   }
 
   // --- Level Selection View ---
