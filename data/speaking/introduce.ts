@@ -1,6 +1,6 @@
 import { Level } from '../../types';
 
-export const Risk = {
+export const Introduce = {
     name: 'Introduce a little bit about yourself',
     description: '',
     difficulty: 'medium',
