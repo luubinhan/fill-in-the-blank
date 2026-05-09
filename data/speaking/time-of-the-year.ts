@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const TimeOfTheYear = {
     name: 'Time of the year',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "For me, the best moment of the year is definitely the Tet holiday.",

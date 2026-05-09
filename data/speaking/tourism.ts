@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const Tourism = {
     name: 'Good and bad sides of increased tourism',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
       {
         english: "I think tourism is great for the economy.",

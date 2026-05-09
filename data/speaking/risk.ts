@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const Risk = {
     name: 'Risks taking',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "Honestly, I think taking risks is kind of unavoidable if you want to move forward in your career.",

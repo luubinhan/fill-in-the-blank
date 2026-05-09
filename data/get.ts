@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const Get = {
     name: 'Get',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "The app gets slow when many users log in",

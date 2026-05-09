@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const HowAreYou = {
     name: 'How Are You?',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "You know, same old, _same old_",

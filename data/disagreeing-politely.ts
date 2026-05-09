@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const DisagreeingPolitely = {
     name: 'Disagreeing Politely',
     description: ' Disagreeing Politely & Giving Technical Opinions',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "I see your point, but ...",

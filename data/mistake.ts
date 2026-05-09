@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const Mistake = {
     name: 'Mistake',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "discussed the issue",

@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const Mispronunciation = {
   name: 'Mispronunciation',
   description: '',
-  difficulty: 'easy',
+  mode: 'vocabulary',
   sentences: [
     {
       english: "instance",

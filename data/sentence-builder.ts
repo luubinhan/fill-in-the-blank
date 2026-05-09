@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const SentenceBuilder = {
     name: 'Sentence Builder',
     description: 'Longer sentences with more details.',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "So, apparently, she decided to leave the company last week",

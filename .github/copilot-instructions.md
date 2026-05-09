@@ -17,10 +17,11 @@ A React/TypeScript language learning app with two game modes: **Flashcards** and
 
 ### Type System (`types.ts`)
 ```typescript
-ViewState = 'levels' | 'modes' | 'game'  // Navigation states
-GameMode = 'flashcards' | 'fill-blank'   // Two game types
-Level: { sentences: Sentence[] }         // Level contains array of sentence pairs
-Sentence: { english: string, translation: string }  // Bilingual pairs
+ViewState = 'levels' | 'speaking' | 'game'  // Navigation states
+GameMode = 'flashcards' | 'fill-blank'   // Session mode (user picks per level)
+LevelMode = 'vocabulary' | 'flashcards' | 'fill-blank'  // Deck metadata (content / quiz variant)
+Level: { name, description, mode: LevelMode, sentences: Sentence[] }
+Sentence: { english: string, translation: string, vietnamese?: string }
 ```
 
 ## Key Patterns & Conventions
@@ -79,15 +80,13 @@ npm run deploy          # Build + deploy via gh-pages
 ## Adding New Features
 
 ### Adding a New Level
-Edit `constants.ts` → add Level object to `LEVELS` array:
+Define a `Level` in `data/<name>.ts` (with `satisfies Level`), import it in `constants.ts`, and add it to `LEVELS`:
 ```typescript
 {
-  id: 'lvl_4',
   name: 'Advanced Grammar',
-  difficulty: 'hard',
-  color: 'bg-red-100 text-red-700',     // Not actively used in current UI
-  accentColor: 'border-red-400',        // Not actively used in current UI  
-  sentences: [/* Sentence objects */]
+  description: '',
+  mode: 'fill-blank',  // or 'vocabulary' | 'flashcards'
+  sentences: [/* Sentence objects */],
 }
 ```
 

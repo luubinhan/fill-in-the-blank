@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const PlaceToLive = {
     name: 'Good place to live',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "There are a few factors that make a place a good place to live",

@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const DailyStandup = {
     name: 'Daily Standup',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "Yesterday, I mainly focused on improving the login flow.",

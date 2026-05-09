@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const Tired = {
     name: 'Tired',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "I'm worn out after that long trip.",

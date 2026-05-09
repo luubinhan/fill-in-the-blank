@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const SpeakingFramework = {
     name: 'Speaking framework',
     description: 'Longer sentences with more details.',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "Let’s focus on the goal of this meeting. We need to decide the approach and leave with clear action items",

@@ -39,7 +39,7 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel }) => {
                 {level.name}
               </span>
               <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
-                {level.sentences.length} Cards • {level.difficulty}
+                {level.sentences.length} Cards • {level.mode}
               </span>
             </div>
           </div>

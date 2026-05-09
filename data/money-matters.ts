@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const MoneyMatters = {
     name: 'Money Matters',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "I always spend within my budget whenever I go shopping",

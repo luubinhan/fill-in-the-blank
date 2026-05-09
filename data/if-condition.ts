@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const ConditionalStatements = {
   name: 'Conditional Statements',
   description: '',
-  difficulty: 'medium',
+  mode: 'fill-blank',
   sentences: [
     {
       english: "If we had tested the new feature more thoroughly, we might have caught the bug before it went to production.",

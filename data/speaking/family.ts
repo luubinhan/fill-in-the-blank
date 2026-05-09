@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const Family = {
     name: 'Family come first',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "I strongly believe that family should always come first",

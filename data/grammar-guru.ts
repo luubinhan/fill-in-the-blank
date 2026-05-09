@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const GrammarGuru = {
     name: 'Grammar Guru',
     description: 'Complex sentences focusing on grammar.',
-    difficulty: 'hard',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "be adj enough to + verb",

@@ -85,7 +85,7 @@ function App() {
     setView('game');
     const searchParams = new URLSearchParams({
       level: level.name,
-      difficulty: level.difficulty,
+      deck: level.mode,
       mode,
     });
     if (source === 'speaking') {
@@ -120,7 +120,7 @@ function App() {
     setGameKey((prev) => prev + 1);
     const searchParams = new URLSearchParams({
       level: level.name,
-      difficulty: level.difficulty,
+      deck: level.mode,
       mode: gameMode,
     });
     if (sourceView === 'speaking') {
@@ -164,7 +164,7 @@ function App() {
                       {level.name}
                     </span>
                     <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
-                       {level.sentences.length} Cards • {level.difficulty}
+                       {level.sentences.length} Cards • {level.mode}
                     </span>
                 </div>
               </div>
@@ -228,7 +228,7 @@ function App() {
       );
     }
 
-    if (gameMode === 'fill-blank' && selectedLevel.difficulty === 'easy') {
+    if (gameMode === 'fill-blank' && selectedLevel.mode === 'vocabulary') {
       return (
         <VocabularyMode 
           key={gameKey}

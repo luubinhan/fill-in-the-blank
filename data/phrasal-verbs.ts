@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const PhrasalVerbs = {
     name: 'Phrasal Verbs',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "I have to jump off 5 minutes eearly",

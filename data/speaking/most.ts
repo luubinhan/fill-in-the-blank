@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const LearnMost = {
     name: 'Who you learn most from your career',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "I think the one who's had the biggest impact on me is my current solution architect",

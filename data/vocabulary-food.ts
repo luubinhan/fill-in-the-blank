@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const VocabularyFood = {
     name: 'Vocabulary Food',
     description: '',
-    difficulty: 'easy',
+    mode: 'vocabulary',
     sentences: [
       {
         english: "toast your bread",

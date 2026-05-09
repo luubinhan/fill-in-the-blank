@@ -3,7 +3,7 @@ import { Level } from '../../types';
 export const Introduce = {
     name: 'Introduce a little bit about yourself',
     description: '',
-    difficulty: 'medium',
+    mode: 'flashcards',
     sentences: [
         {
             english: "but everyone at work calls me Andy. I’m a father of a six-year-old girl",

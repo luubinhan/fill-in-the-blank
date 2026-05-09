@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const Vocabulary = {
     name: 'Vocabulary',
     description: '',
-    difficulty: 'easy',
+    mode: 'vocabulary',
     sentences: [
       {
         english: "connecting flight",

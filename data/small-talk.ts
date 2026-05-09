@@ -3,7 +3,7 @@ import { Level } from '../types';
 export const SmallTalk = {
     name: 'Small Talk',
     description: '',
-    difficulty: 'medium',
+    mode: 'fill-blank',
     sentences: [
       {
         english: "I'm still learning how things work here",
