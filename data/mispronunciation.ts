@@ -26,6 +26,30 @@ export const Mispronunciation = {
       translation: "(bay-sis)"
     },
     {
+      english: "known",
+      translation: "'k' is silent"
+    },
+    {
+      english: "science",
+      translation: "sy-ins"
+    },
+    {
+      english: "since",
+      translation: "sins"
+    },
+    {
+      english: "head",
+      translation: "hed"
+    },
+    {
+      english: "hed",
+      translation: "laɪf.staɪl"
+    },
+    {
+      english: "because",
+      translation: "be-coz"
+    },
+    {
       english: "sharp",
       translation: "/ʃɑːp/ (focus on the 'ar')"
     },

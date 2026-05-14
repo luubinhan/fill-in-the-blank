@@ -6,7 +6,7 @@ export const Introduce = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "but everyone at work calls me Andy. I’m a father of a six-year-old girl",
+            english: "but everyone at work calls me Andy. I’m a father of a six-year-old daughter",
             translation: "at work",
             vietnamese: "tại nơi làm việc"
         },
@@ -16,7 +16,7 @@ export const Introduce = {
             vietnamese: "đã làm việc với"
         },
         {
-            english: "I’m originally from a small town in southern Vietnam, near the Cambodian border.",
+            english: "I’m originally from a small town in south of Vietnam, near the Cambodian border.",
             translation: "southern",
             vietnamese: "miền nam"
         },
@@ -66,7 +66,7 @@ export const Introduce = {
             vietnamese: "tự do hơn"
         },
         {
-            english: "Compared to 10 years ago, I now spend less time chasing bigger things and I have much more time for myself",
+            english: "over the past ten years., I now spend less time chasing bigger things and I have much more time for myself",
             translation: "chasing bigger things",
             vietnamese: "đuổi theo những thứ lớn hơn"
         },
