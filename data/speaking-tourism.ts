@@ -9,8 +9,10 @@ import { Introduce } from './speaking/introduce';
 import { WorkingInTheOffice } from './speaking/working-in-the-office';
 import { ProudProject } from './speaking/proud-project';
 import { FlexibleRoutine } from './speaking/flexiable-routine';
+import { EnjoyUniversity } from './speaking/enjoy-university';
 
 export const SPEAKING_LEVELS: Level[] = [
+  EnjoyUniversity,
   FlexibleRoutine,
   ProudProject,
   Risk,
