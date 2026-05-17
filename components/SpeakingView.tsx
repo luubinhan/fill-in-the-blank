@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
-import { Level, GameMode } from '../types';
+import { Level, GameMode, LevelSelectionCounters } from '../types';
 import { SPEAKING_LEVELS } from '../data/speaking-tourism';
 import { Layers, PenTool } from 'lucide-react';
+import { normalizeLevelCounterKey } from '../utils/levelSelectionCounterDb';
 
 interface SpeakingViewProps {
   onSelectLevel: (level: Level, mode: GameMode) => void;
+  levelSelectionCounters: LevelSelectionCounters;
 }
 
 const levelBadgePalette = [
@@ -17,11 +19,16 @@ const levelBadgePalette = [
   'bg-lime-500/15 text-lime-300',
 ];
 
-const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel }) => {
+const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel, levelSelectionCounters }) => {
   const randomColors = useMemo(
     () => SPEAKING_LEVELS.map(() => levelBadgePalette[Math.floor(Math.random() * levelBadgePalette.length)]),
     []
   );
+
+  const getLevelSelectionCount = (levelName: string) => {
+    const key = normalizeLevelCounterKey(levelName);
+    return levelSelectionCounters[key] ?? 0;
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
@@ -40,6 +47,9 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel }) => {
               </span>
               <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
                 {level.sentences.length} Cards • {level.mode}
+              </span>
+              <span className="text-xs text-zinc-400 font-medium mt-1">
+                Selected {getLevelSelectionCount(level.name)} times
               </span>
             </div>
           </div>

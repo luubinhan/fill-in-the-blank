@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { LEVELS } from './constants';
-import { GameMode, ViewState, Level } from './types';
+import { GameMode, ViewState, Level, LevelSelectionCounters } from './types';
 import FlashcardMode from './components/FlashcardMode';
 import SpeakingFlashcardMode from './components/SpeakingFlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
@@ -9,6 +9,11 @@ import SpeakingView from './components/SpeakingView';
 import ScreenHeader from './components/ScreenHeader';
 import { Layers, PenTool} from 'lucide-react';
 import { prepareGameData } from './utils/dataUtils';
+import {
+  getAllLevelSelectionCounts,
+  incrementLevelSelectionCount,
+  normalizeLevelCounterKey,
+} from './utils/levelSelectionCounterDb';
 
 import { SPEAKING_LEVELS } from './data/speaking-tourism';
 
@@ -76,8 +81,51 @@ function App() {
   const [selectedLevel, setSelectedLevel] = useState<Level | null>(initialState.selectedLevel);
   const [gameKey, setGameKey] = useState(0);
   const [sourceView, setSourceView] = useState<'levels' | 'speaking'>(initialState.sourceView);
+  const [levelSelectionCounters, setLevelSelectionCounters] = useState<LevelSelectionCounters>({});
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    const hydrateCounters = async () => {
+      const counters = await getAllLevelSelectionCounts();
+      if (!isCancelled) {
+        setLevelSelectionCounters(counters);
+      }
+    };
+
+    void hydrateCounters();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  const getLevelSelectionCount = (levelName: string) => {
+    const key = normalizeLevelCounterKey(levelName);
+    return levelSelectionCounters[key] ?? 0;
+  };
 
   const handleLevelAndModeSelect = (level: Level, mode: GameMode, source: 'levels' | 'speaking' = 'levels') => {
+    const levelCounterKey = normalizeLevelCounterKey(level.name);
+
+    setLevelSelectionCounters((prev) => ({
+      ...prev,
+      [levelCounterKey]: (prev[levelCounterKey] ?? 0) + 1,
+    }));
+
+    void incrementLevelSelectionCount(level.name)
+      .then((persistedCount) => {
+        if (!persistedCount) {
+          return;
+        }
+
+        setLevelSelectionCounters((prev) => ({
+          ...prev,
+          [levelCounterKey]: Math.max(prev[levelCounterKey] ?? 0, persistedCount),
+        }));
+      })
+      .catch(() => {});
+
     setSelectedLevel(level);
     setGameMode(mode);
     setGameKey(0);
@@ -166,6 +214,9 @@ function App() {
                     <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
                        {level.sentences.length} Cards • {level.mode}
                     </span>
+                      <span className="text-xs text-zinc-400 font-medium mt-1">
+                        Selected {getLevelSelectionCount(level.name)} times
+                      </span>
                 </div>
               </div>
               
@@ -262,6 +313,7 @@ function App() {
       />
       <SpeakingView
         onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}
+        levelSelectionCounters={levelSelectionCounters}
       />
     </div>
   );

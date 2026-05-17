@@ -22,3 +22,5 @@ export interface ProgressStats {
   needsReview: number;
   total: number;
 }
+
+export type LevelSelectionCounters = Record<string, number>;
