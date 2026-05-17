@@ -12,11 +12,6 @@ export const WorkingInTheOffice = {
       },
       {
         english: "I think there are many benefits to working together in person",
-        translation: "benefits",
-        vietnamese: "lợi ích"
-      },
-      {
-        english: "I think there are many benefits to working together in person",
         translation: "in person",
         vietnamese: "trực tiếp"
       },
