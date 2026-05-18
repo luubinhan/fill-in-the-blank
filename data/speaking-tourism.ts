@@ -13,8 +13,10 @@ import { EnjoyUniversity } from './speaking/enjoy-university';
 import { Hobbies } from './speaking/hobbies';
 import { WorkingFromHome } from './speaking/working-from-home';
 import { HomeRecharge } from './speaking/home-recharge';
+import { SpendWeekends } from './speaking/weekends';
 
 export const SPEAKING_LEVELS: Level[] = [
+  SpendWeekends,
   HomeRecharge,
   Hobbies,
   EnjoyUniversity,
