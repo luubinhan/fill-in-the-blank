@@ -12,8 +12,10 @@ import { FlexibleRoutine } from './speaking/flexiable-routine';
 import { EnjoyUniversity } from './speaking/enjoy-university';
 import { Hobbies } from './speaking/hobbies';
 import { WorkingFromHome } from './speaking/working-from-home';
+import { HomeRecharge } from './speaking/home-recharge';
 
 export const SPEAKING_LEVELS: Level[] = [
+  HomeRecharge,
   Hobbies,
   EnjoyUniversity,
   FlexibleRoutine,
