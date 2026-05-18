@@ -30,11 +30,25 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel, levelSelecti
     return levelSelectionCounters[key] ?? 0;
   };
 
+  const sortedLevels = useMemo(
+    () =>
+      [...SPEAKING_LEVELS].sort((a, b) => {
+        const aKey = normalizeLevelCounterKey(a.name);
+        const bKey = normalizeLevelCounterKey(b.name);
+        const aCount = levelSelectionCounters[aKey] ?? 0;
+        const bCount = levelSelectionCounters[bKey] ?? 0;
+        const countDiff = aCount - bCount;
+        if (countDiff !== 0) return countDiff;
+        return a.name.localeCompare(b.name);
+      }),
+    [levelSelectionCounters]
+  );
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-      {SPEAKING_LEVELS.map((level, idx) => (
+      {sortedLevels.map((level, idx) => (
         <div
-          key={idx}
+          key={level.name}
           className="bg-zinc-900 border flex flex-col border-zinc-800 text-left p-6 rounded-2xl transition-all"
         >
           <div className="flex mb-4">
