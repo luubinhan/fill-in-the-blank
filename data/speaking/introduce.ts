@@ -66,7 +66,7 @@ export const Introduce = {
             vietnamese: "tự do hơn"
         },
         {
-            english: "over the past ten years., I now spend less time chasing bigger things and I have much more time for myself",
+            english: "over the past ten years, I now spend less time chasing bigger things and I have much more time for myself",
             translation: "chasing bigger things",
             vietnamese: "đuổi theo những thứ lớn hơn"
         },
