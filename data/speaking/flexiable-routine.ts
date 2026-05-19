@@ -11,9 +11,9 @@ export const FlexibleRoutine = {
             vietnamese: "thích hơn"
         },
         {
-            english: "Maybe it’s because I’m quite an adventurous person",
-            translation: "adventurous person",
-            vietnamese: "người thích phiêu lưu"
+            english: "Maybe it’s because I’m quite an open-minded person",
+            translation: "open-minded person",
+            vietnamese: "người cởi mở"
         },
         {
             english: "Besides that, I believe that if you keep doing the same thing over and over again, you’ll probably keep getting the same results",
@@ -31,17 +31,12 @@ export const FlexibleRoutine = {
             vietnamese: "có thể hiểu"
         },
         {
-            english: "But for me, life is really unpredictable. Things happen all the time",
+            english: "But for me, life is really unpredictable. Unexpected things happen all the time",
             translation: "is unpredictable",
             vietnamese: "không thể đoán trước"
         },
         {
-            english: "But for me, life is really unpredictable. Things happen all the time",
-            translation: "is unpredictable",
-            vietnamese: "không thể đoán trước"
-        },
-        {
-            english: "I think having a flexible routine actually helps you build a stronger mindset and learn how to adapt to whatever life throws at you",
+            english: "I think having a simple routine helps you stay grounded and adapt to whatever life throws at you",
             translation: "throws at you",
             vietnamese: "ném vào bạn"
         },
