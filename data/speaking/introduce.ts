@@ -17,11 +17,11 @@ export const Introduce = {
         },
         {
             english: "I’m originally from a small town in south of Vietnam, near the Cambodian border.",
-            translation: "southern",
+            translation: "south",
             vietnamese: "miền nam"
         },
         {
-            english: "The area is well known for its huge rice fields in the Mekong Delta",
+            english: "My town is well known for its huge rice fields in the Mekong Delta",
             translation: "well known",
             vietnamese: "nổi tiếng"
         },
