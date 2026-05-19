@@ -16,9 +16,9 @@ export const WorkingInTheOffice = {
         vietnamese: "trực tiếp"
       },
       {
-        english: "For example, employees can communicate face to face, which makes it easier to understand each other’s emotions and reactions during discussions.",
-        translation: "emotions and reactions",
-        vietnamese: "cảm xúc và phản ứng"
+        english: "For example, when employees communicate face to face, it is easier to read each other’s emotions, reactions, and body language during discussions",
+        translation: "easier to read",
+        vietnamese: "dễ dàng đọc"
       },
       {
         english: "In my opinion, this is much more effective than chatting online or attending virtual meetings because communication feels more natural",
@@ -51,9 +51,9 @@ export const WorkingInTheOffice = {
         vietnamese: "cung cấp nhiều lợi ích"
       },
       {
-        english: "For instance, it provides a better work-life balance and can reduce stress from long hours spent commuting or staying in the office",
-        translation: "long hours spent commuting",
-        vietnamese: "hàng giờ di chuyển"
+        english: "For instance, flexible working can improve work-life balance and reduce the stress of commuting or spending long hours in the office",
+        translation: "reduce the stress of commuting",
+        vietnamese: "giảm căng thẳng khi đi lại"
       },
       {
         english: "As a result, employees may feel happier and work more efficiently",
