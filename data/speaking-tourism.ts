@@ -15,8 +15,10 @@ import { WorkingFromHome } from './speaking/working-from-home';
 import { HomeRecharge } from './speaking/home-recharge';
 import { SpendWeekends } from './speaking/weekends';
 import { ConstrainProject } from './speaking/constrain-project';
+import { DifficultFeedback } from './speaking/difficult-feedback';
 
 export const SPEAKING_LEVELS: Level[] = [
+  DifficultFeedback,
   SpendWeekends,
   HomeRecharge,
   Hobbies,
