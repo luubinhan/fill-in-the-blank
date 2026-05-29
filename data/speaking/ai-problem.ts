@@ -11,7 +11,7 @@ export const AiProblem = {
         vietnamese: "một thời gian khá dài rồi",
       },
       {
-        english: "But at the same time, in some situations, it can also create problems if people rely on it too much",
+        english: "But at the same time, in some situations, it can also create problems if we rely on it too much",
         translation: "can also create",
         vietnamese: "cũng có thể tạo ra",
       },
@@ -26,17 +26,17 @@ export const AiProblem = {
         vietnamese: "xử lý công việc lặp đi lặp lại",
       },
       {
-        english: "But on the other hand, I’ve also seen teams integrate AI too deeply into critical business workflows",
-        translation: "integrate AI too deeply",
-        vietnamese: "tích hợp AI quá sâu",
+        english: "But on the other hand, I’ve also seen some teams rely too heavily on AI for almost everything",
+        translation: "rely too heavily on AI",
+        vietnamese: "dựa quá nhiều vào AI",
       },
       {
-        english: "Sometimes they reach a point where nobody on the team truly understands why the system behaves a certain way anymore because they rely too heavily on AI-generated solutions",
+        english: "Sometimes they reach a point where nobody on the team truly understands why the system behaves a certain way anymore",
         translation: "reach a point",
         vietnamese: "đạt đến một điểm",
       },
       {
-        english: "The real problem starts when something breaks. Once a failure happens, debugging the issue can take days because people don’t fully understand the logic behind the implementation",
+        english: "When something breaks,debugging the issue can take days, because we don’t fully understand the logic behind the implementation",
         translation: "debugging the issue",
         vietnamese: "gỡ lỗi vấn đề",
       },
