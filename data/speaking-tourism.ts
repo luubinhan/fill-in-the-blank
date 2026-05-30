@@ -17,8 +17,10 @@ import { SpendWeekends } from './speaking/weekends';
 import { ConstrainProject } from './speaking/constrain-project';
 import { DifficultFeedback } from './speaking/difficult-feedback';
 import { AiProblem } from './speaking/ai-problem';
+import { PromoteInternalStaff } from './speaking/promote-internal-staff';
 
 export const SPEAKING_LEVELS: Level[] = [
+  PromoteInternalStaff,
   AiProblem,
   DifficultFeedback,
   SpendWeekends,
