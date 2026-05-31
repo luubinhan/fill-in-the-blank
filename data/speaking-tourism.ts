@@ -18,6 +18,7 @@ import { ConstrainProject } from './speaking/constrain-project';
 import { DifficultFeedback } from './speaking/difficult-feedback';
 import { AiProblem } from './speaking/ai-problem';
 import { PromoteInternalStaff } from './speaking/promote-internal-staff';
+import { AllowRemoteWork } from './speaking/allow-wfh';
 
 export const SPEAKING_LEVELS: Level[] = [
   PromoteInternalStaff,
@@ -38,5 +39,6 @@ export const SPEAKING_LEVELS: Level[] = [
   TimeOfTheYear,
   WorkingInTheOffice,
   WorkingFromHome,
+  AllowRemoteWork,
   ConstrainProject
 ];
