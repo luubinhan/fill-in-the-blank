@@ -11,9 +11,9 @@ export const ConstrainProject = {
         vietnamese: "giao một công việc"
       },
       {
-        english: "and the stakeholders strongly emphasized that even 10 minutes of downtime was unacceptable",
-        translation: "strongly emphasized",
-        vietnamese: "nhấn mạnh"
+        english: "and 'The stakeholders strongly emphasized that even 10-minutes of downtime would be unacceptable.",
+        translation: "would be",
+        vietnamese: "sẽ là"
       },
       {
         english: "Just to give you some context, those websites had around 7 million active users every month",
