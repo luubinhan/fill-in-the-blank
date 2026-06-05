@@ -125,5 +125,41 @@ export const Mispronunciation = {
       english: "lively",
       translation: "lai-vo-li"
     },
+    {
+      english: "lively",
+      translation: "lai-vo-li"
+    },
+    {
+      english: "task",
+      translation: "tɑːsk"
+    },
+    {
+      english: "migrate",
+      translation: "MY-grayt"
+    },
+    {
+      english: "Migration",
+      translation: "my-GRAY-shun"
+    },
+    {
+      english: "short",
+      translation: "sh-ort"
+    },
+    {
+      english: "rollout",
+      translation: "rowl + out"
+    },
+    {
+      english: "approach",
+      translation: "uh-PROHCH"
+    },
+    {
+      english: "afterwards",
+      translation: "AF-tuh-wuhdz"
+    },
+    {
+      english: "fired",
+      translation: "fy-ird"
+    },
   ]
 } satisfies Level;
