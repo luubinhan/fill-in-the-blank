@@ -19,6 +19,7 @@ import { DifficultFeedback } from './speaking/difficult-feedback';
 import { AiProblem } from './speaking/ai-problem';
 import { PromoteInternalStaff } from './speaking/promote-internal-staff';
 import { AllowRemoteWork } from './speaking/allow-wfh';
+import { Idioms } from './speaking/idioms';
 
 export const SPEAKING_LEVELS: Level[] = [
   PromoteInternalStaff,
@@ -40,5 +41,6 @@ export const SPEAKING_LEVELS: Level[] = [
   WorkingInTheOffice,
   WorkingFromHome,
   AllowRemoteWork,
-  ConstrainProject
+  ConstrainProject,
+  Idioms
 ];
