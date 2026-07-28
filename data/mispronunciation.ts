@@ -1,0 +1,165 @@
+import { Level } from '../types';
+
+export const Mispronunciation = {
+  name: 'Mispronunciation',
+  description: '',
+  mode: 'vocabulary',
+  sentences: [
+    {
+      english: "instance",
+      translation: "/ˈɪn.stəns/"
+    },
+    {
+      english: "start",
+      translation: "/stɑːt/"
+    },
+    {
+      english: "exercise",
+      translation: "/ˈek.sə.saɪz/"
+    },
+    {
+      english: "organized",
+      translation: "/ˈɔː.ɡən.aɪzd/"
+    },
+    {
+      english: "basis",
+      translation: "(bay-sis)"
+    },
+    {
+      english: "known",
+      translation: "'k' is silent"
+    },
+    {
+      english: "science",
+      translation: "sy-ins"
+    },
+    {
+      english: "since",
+      translation: "sins"
+    },
+    {
+      english: "head",
+      translation: "hed"
+    },
+    {
+      english: "hed",
+      translation: "laɪf.staɪl"
+    },
+    {
+      english: "because",
+      translation: "be-coz"
+    },
+    {
+      english: "sharp",
+      translation: "/ʃɑːp/ (focus on the 'ar')"
+    },
+    {
+      english: "exercise",
+      translation: "/ˈek.sə.saɪz/"
+    },
+    {
+      english: "find",
+      translation: "/faɪnd/"
+    },
+    {
+      english: "healthy",
+      translation: "/ˈhel.θi/ (HEL-thee)"
+    },
+    {
+      english: "excuses",
+      translation: "/ɪkˈskjuːz/(ik-sku-sis)"
+    },
+    {
+      english: "articles",
+      translation: "AR-ti-kils"
+    },
+    {
+      english: "read",
+      translation: "pronounced 'red' when it's in past tense"
+    },
+    {
+      english: "change",
+      translation: "chaynj"
+    },
+    {
+      english: "Prioritize",
+      translation: "pry-oh-ree-tize"
+    },
+    {
+      english: "often",
+      translation: "/ˈɒf.ən/-o-fin"
+    },
+    {
+      english: "savvy",
+      translation: "sa-vee"
+    },
+    {
+      english: "page",
+      translation: "payj"
+    },
+    {
+      english: "cause",
+      translation: "cawz"
+    },
+    {
+      english: "told",
+      translation: "towld"
+    },
+    {
+      english: "because",
+      translation: "bi-koz"
+    },
+    {
+      english: "push",
+      translation: "puf"
+    },
+    {
+      english: "alternative",
+      translation: "al-TIR-na-tiv"
+    },
+    {
+      english: "region",
+      translation: "ree-jn"
+    },
+    {
+      english: "lively",
+      translation: "lai-vo-li"
+    },
+    {
+      english: "lively",
+      translation: "lai-vo-li"
+    },
+    {
+      english: "task",
+      translation: "tɑːsk"
+    },
+    {
+      english: "migrate",
+      translation: "MY-grayt"
+    },
+    {
+      english: "Migration",
+      translation: "my-GRAY-shun"
+    },
+    {
+      english: "short",
+      translation: "sh-ort"
+    },
+    {
+      english: "rollout",
+      translation: "rowl + out"
+    },
+    {
+      english: "approach",
+      translation: "uh-PROHCH"
+    },
+    {
+      english: "afterwards",
+      translation: "AF-tuh-wuhdz"
+    },
+    {
+      english: "fired",
+      translation: "fy-ird"
+    },
+  ]
+} satisfies Level;

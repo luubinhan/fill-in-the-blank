@@ -1,0 +1,46 @@
+import { Level } from '../types';
+import { Tourism } from './speaking/tourism';
+import { Family } from './speaking/family';
+import { LearnMost } from './speaking/most';
+import { PlaceToLive } from './speaking/place-to-live';
+import { TimeOfTheYear } from './speaking/time-of-the-year';
+import { Risk } from './speaking/risk';
+import { Introduce } from './speaking/introduce';
+import { WorkingInTheOffice } from './speaking/working-in-the-office';
+import { ProudProject } from './speaking/proud-project';
+import { FlexibleRoutine } from './speaking/flexiable-routine';
+import { EnjoyUniversity } from './speaking/enjoy-university';
+import { Hobbies } from './speaking/hobbies';
+import { WorkingFromHome } from './speaking/working-from-home';
+import { HomeRecharge } from './speaking/home-recharge';
+import { SpendWeekends } from './speaking/weekends';
+import { ConstrainProject } from './speaking/constrain-project';
+import { DifficultFeedback } from './speaking/difficult-feedback';
+import { AiProblem } from './speaking/ai-problem';
+import { PromoteInternalStaff } from './speaking/promote-internal-staff';
+import { AllowRemoteWork } from './speaking/allow-wfh';
+import { Idioms } from './idioms';
+
+export const SPEAKING_LEVELS: Level[] = [
+  PromoteInternalStaff,
+  AiProblem,
+  DifficultFeedback,
+  SpendWeekends,
+  HomeRecharge,
+  Hobbies,
+  EnjoyUniversity,
+  FlexibleRoutine,
+  ProudProject,
+  Risk,
+  Introduce,
+  Tourism,
+  Family,
+  LearnMost,
+  PlaceToLive,
+  TimeOfTheYear,
+  WorkingInTheOffice,
+  WorkingFromHome,
+  AllowRemoteWork,
+  ConstrainProject,
+  Idioms
+];

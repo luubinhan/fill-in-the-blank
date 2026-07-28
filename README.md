@@ -8,10 +8,8 @@ A modern, interactive language learning application built with React and TypeScr
 - **Flashcard Mode**: Review sentences with their translations
 - **Fill-in-the-Blank Mode**: Test your understanding by completing sentences
 
-### 📚 Progressive Difficulty Levels
-- **Beginner Explorer**: Short and sweet sentences for starting out
-- **Sentence Builder**: Longer sentences with more details
-- **Master Storyteller**: Complex sentences for super learners
+### 📚 Deck modes
+Each level has a **`mode`** that describes the kind of content and which quiz UI applies: **`vocabulary`** (phrase-style vocabulary quiz), **`fill-blank`** (sentence fill-in-the-blank), or **`flashcards`** (often used for speaking-practice decks).
 
 ### ✨ Modern UI/UX
 - Clean, dark-themed interface
@@ -87,7 +85,7 @@ fill-in-the-blank/
 
 ## How to Play
 
-1. **Select a Level**: Choose from Beginner, Intermediate, or Advanced difficulty
+1. **Select a Level**: Pick a deck; the subtitle shows how many cards it has and its **mode**
 2. **Pick a Mode**: 
    - Choose Flashcards to review sentences
    - Choose Fill-in-the-Blank to test your skills
@@ -102,16 +100,18 @@ Edit [constants.ts](constants.ts) to add new levels or sentences:
 
 ```typescript
 {
-  id: 'unique_id',
-  english: "Your sentence here.",
-  translation: "Translation or hint.",
-  difficulty: 'easy' | 'medium' | 'hard'
+  name: 'My Deck',
+  description: '',
+  mode: 'vocabulary' | 'flashcards' | 'fill-blank',
+  sentences: [
+    { english: "Your sentence here.", translation: "Translation or hint." },
+  ],
 }
 ```
 
-### Modifying Difficulty Levels
+### Modifying levels
 
-Update the `LEVELS` array in [constants.ts](constants.ts) to customize level names, descriptions, and colors.
+Add or edit level modules under `data/`, import them in [constants.ts](constants.ts), and append them to the `LEVELS` array. Set **`mode`** appropriately for each deck.
 
 ## License
 

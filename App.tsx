@@ -1,177 +1,327 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { LEVELS } from './constants';
-import { GameMode, ViewState, Level } from './types';
+import { GameMode, ViewState, Level, LevelSelectionCounters } from './types';
 import FlashcardMode from './components/FlashcardMode';
+import SpeakingFlashcardMode from './components/SpeakingFlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
-import { Layers, PenTool, ChevronLeft, Star, Zap, Crown, User, RotateCw, Clock, Flame, LayoutGrid } from 'lucide-react';
+import VocabularyMode from './components/VocabularyMode';
+import SpeakingView from './components/SpeakingView';
+import ScreenHeader from './components/ScreenHeader';
+import { Layers, PenTool} from 'lucide-react';
+import { prepareGameData } from './utils/dataUtils';
+import {
+  getAllLevelSelectionCounts,
+  incrementLevelSelectionCount,
+  normalizeLevelCounterKey,
+} from './utils/levelSelectionCounterDb';
+
+import { SPEAKING_LEVELS } from './data/speaking-tourism';
+
+const ALL_LEVELS = [...LEVELS, ...SPEAKING_LEVELS];
+
+function getInitialStateFromURL(): {
+  view: ViewState;
+  gameMode: GameMode;
+  selectedLevel: Level | null;
+  sourceView: 'levels' | 'speaking';
+} {
+  const params = new URLSearchParams(window.location.search);
+  const isSpeakingPath = params.has('speaking');
+  const levelParam = params.get('level');
+  const modeParam = params.get('mode');
+
+  if (!levelParam || !modeParam) {
+    return { view: isSpeakingPath ? 'speaking' : 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: isSpeakingPath ? 'speaking' : 'levels' };
+  }
+
+  const validModes: GameMode[] = ['flashcards', 'fill-blank'];
+  const mode = validModes.includes(modeParam as GameMode) ? (modeParam as GameMode) : null;
+  if (!mode) {
+    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: 'levels' };
+  }
+
+  const decodedLevelName = decodeURIComponent(levelParam).trim();
+  const level = ALL_LEVELS.find(
+    (l) => l.name.trim().toLowerCase() === decodedLevelName.toLowerCase()
+  );
+  if (!level) {
+    return { view: 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: 'levels' };
+  }
+
+  const source = isSpeakingPath ? 'speaking' : 'levels';
+  return { view: 'game', gameMode: mode, selectedLevel: level, sourceView: source };
+}
+
+function buildSearchWithSpeakingFlag(searchParams: URLSearchParams, includeSpeaking: boolean): string {
+  const query = searchParams.toString();
+  if (!includeSpeaking) {
+    return query ? `?${query}` : '';
+  }
+  return query ? `?speaking&${query}` : '?speaking';
+}
 
 function App() {
-  const [view, setView] = useState<ViewState>('levels');
-  const [gameMode, setGameMode] = useState<GameMode>('flashcards');
-  const [selectedLevel, setSelectedLevel] = useState<Level | null>(null);
+  const levelBadgePalette = [
+    'bg-rose-500/15 text-rose-300',
+    'bg-amber-500/15 text-amber-300',
+    'bg-emerald-500/15 text-emerald-300',
+    'bg-cyan-500/15 text-cyan-300',
+    'bg-sky-500/15 text-sky-300',
+    'bg-fuchsia-500/15 text-fuchsia-300',
+    'bg-lime-500/15 text-lime-300',
+  ];
 
-  const handleLevelSelect = (level: Level) => {
-    setSelectedLevel(level);
-    setView('modes');
+  const initialState = useMemo(() => getInitialStateFromURL(), []);
+  const randomLevelBadgeColors = useMemo(
+    () => LEVELS.map(() => levelBadgePalette[Math.floor(Math.random() * levelBadgePalette.length)]),
+    []
+  );
+  const [view, setView] = useState<ViewState>(initialState.view);
+  const [gameMode, setGameMode] = useState<GameMode>(initialState.gameMode);
+  const [selectedLevel, setSelectedLevel] = useState<Level | null>(initialState.selectedLevel);
+  const [gameKey, setGameKey] = useState(0);
+  const [sourceView, setSourceView] = useState<'levels' | 'speaking'>(initialState.sourceView);
+  const [levelSelectionCounters, setLevelSelectionCounters] = useState<LevelSelectionCounters>({});
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    const hydrateCounters = async () => {
+      const counters = await getAllLevelSelectionCounts();
+      if (!isCancelled) {
+        setLevelSelectionCounters(counters);
+      }
+    };
+
+    void hydrateCounters();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  const getLevelSelectionCount = (levelName: string) => {
+    const key = normalizeLevelCounterKey(levelName);
+    return levelSelectionCounters[key] ?? 0;
   };
 
-  const handleModeSelect = (mode: GameMode) => {
+  const handleLevelAndModeSelect = (level: Level, mode: GameMode, source: 'levels' | 'speaking' = 'levels') => {
+    const levelCounterKey = normalizeLevelCounterKey(level.name);
+
+    setLevelSelectionCounters((prev) => ({
+      ...prev,
+      [levelCounterKey]: (prev[levelCounterKey] ?? 0) + 1,
+    }));
+
+    void incrementLevelSelectionCount(level.name)
+      .then((persistedCount) => {
+        if (!persistedCount) {
+          return;
+        }
+
+        setLevelSelectionCounters((prev) => ({
+          ...prev,
+          [levelCounterKey]: Math.max(prev[levelCounterKey] ?? 0, persistedCount),
+        }));
+      })
+      .catch(() => {});
+
+    setSelectedLevel(level);
     setGameMode(mode);
+    setGameKey(0);
+    setSourceView(source);
     setView('game');
+    const searchParams = new URLSearchParams({
+      level: level.name,
+      deck: level.mode,
+      mode,
+    });
+    if (source === 'speaking') {
+      window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, true)}`);
+      return;
+    }
+    window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, false)}`);
   };
 
   const handleExitGame = () => {
-    setView('modes');
+    setSelectedLevel(null);
+    setView(sourceView);
+    const basePath = window.location.pathname;
+    if (sourceView === 'speaking') {
+      window.history.replaceState(null, '', `${basePath}?speaking`);
+    } else {
+      window.history.replaceState(null, '', basePath || '/');
+    }
   };
 
-  const handleBackToLevels = () => {
-    setSelectedLevel(null);
-    setView('levels');
+  const handleNextGame = () => {
+    // Same game mode, same level, just shuffle to get different sentences
+    setGameKey(prev => prev + 1);
   };
+
+  const handleAnotherLevelSameMode = () => {
+    if (!selectedLevel) return;
+    const pool = sourceView === 'speaking' ? SPEAKING_LEVELS : LEVELS;
+    const others = pool.filter((l) => l.name !== selectedLevel.name);
+    const level = others.length > 0 ? others[Math.floor(Math.random() * others.length)] : selectedLevel;
+    setSelectedLevel(level);
+    setGameKey((prev) => prev + 1);
+    const searchParams = new URLSearchParams({
+      level: level.name,
+      deck: level.mode,
+      mode: gameMode,
+    });
+    if (sourceView === 'speaking') {
+      window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, true)}`);
+      return;
+    }
+    window.history.replaceState(null, '', `${window.location.pathname}${buildSearchWithSpeakingFlag(searchParams, false)}`);
+  };
+
+  const homeClick = () => {
+    setView('levels');
+    window.history.replaceState(null, '', window.location.pathname || '/');
+  }
+  const speakingClick = () => {
+    setView('speaking');
+    window.history.replaceState(null, '', `${window.location.pathname}?speaking`);
+  }
 
   // --- Level Selection View ---
   const renderLevelSelection = () => (
-    <div className="min-h-screen bg-black flex flex-col p-6 animate-in fade-in duration-500 max-w-md mx-auto w-full">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-10 pt-4">
-        <span className="text-zinc-400 font-bold text-sm tracking-wider uppercase">Sentency.io</span>
-        <button className="text-zinc-400 hover:text-white transition-colors" onClick={handleBackToLevels}>
-          <LayoutGrid size={24} />
-        </button>
-      </div>
-
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-white leading-tight mb-2">What is your goal<br/>for this session?</h2>
-        <p className="text-zinc-500 font-medium">Select a difficulty level to start.</p>
-      </div>
+    <div className="min-h-screen max-w-7xl bg-black flex flex-col p-6 mx-auto w-full">
+      <ScreenHeader
+        onHomeClick={homeClick}
+        onSpeakingClick={speakingClick}
+        view={view}
+      />
 
       {/* Levels List - Styled as Goals */}
-      <div className="flex-1 flex flex-col gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
           {LEVELS.map((level, idx) => (
-            <button
-              key={level.id}
-              onClick={() => handleLevelSelect(level)}
-              className="group w-full bg-zinc-900 border border-zinc-800 active:border-zinc-600 hover:bg-zinc-800 text-left p-6 rounded-2xl transition-all flex items-center justify-between"
+            <div
+              key={idx}
+              className="bg-zinc-900 border border-zinc-800 text-left p-6 rounded-2xl transition-all"
             >
-              <div className="flex flex-col">
-                  <span className="text-lg font-bold text-white mb-1 group-hover:text-indigo-400 transition-colors">
-                    {level.name}
-                  </span>
-                  <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
-                     {level.sentences.length} Cards • {level.difficulty}
-                  </span>
+              <div className="flex items-center mb-4">
+                 <div className={`text-2xl ${randomLevelBadgeColors[idx]} mr-4 font-bold rounded-full w-10 h-10 flex items-center justify-center`}>
+                   {level.name.charAt(0)}
+                </div>
+                <div className="flex flex-col">
+                    <span className="text-lg font-bold text-white mb-1">
+                      {level.name}
+                    </span>
+                    <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
+                       {level.sentences.length} Cards • {level.mode}
+                    </span>
+                      <span className="text-xs text-zinc-400 font-medium mt-1">
+                        Selected {getLevelSelectionCount(level.name)} times
+                      </span>
+                </div>
               </div>
-              <div className="text-2xl">
-                 {idx === 0 && '👀'}
-                 {idx === 1 && '⏰'}
-                 {idx === 2 && '🔥'}
+              
+              {/* Mode Selection Buttons */}
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  onClick={() => handleLevelAndModeSelect(level, 'flashcards')}
+                  className="bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 p-4 rounded-xl transition-all flex flex-col items-center gap-2"
+                >
+                  <Layers size={20} className="text-indigo-400" />
+                  <span className="text-xs font-bold text-indigo-400">Flashcards</span>
+                </button>
+                
+                <button
+                  onClick={() => handleLevelAndModeSelect(level, 'fill-blank')}
+                  className="bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 p-4 rounded-xl transition-all flex flex-col items-center gap-2"
+                >
+                  <PenTool size={20} className="text-emerald-400" />
+                  <span className="text-xs font-bold text-emerald-400">Quiz Mode</span>
+                </button>
               </div>
-            </button>
+            </div>
           ))}
       </div>
     </div>
   );
 
-  // --- Mode Selection View ---
-  const renderModeSelection = () => (
-    <div className="min-h-screen bg-black flex flex-col relative animate-in slide-in-from-right-8 fade-in duration-500 max-w-md mx-auto w-full p-6">
-       {/* Custom Nav Header */}
-       <div className="flex items-center justify-between mb-8 pt-4">
-          <button 
-            onClick={handleBackToLevels}
-            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
-          >
-             <ChevronLeft size={20} /> <span className="text-sm font-bold uppercase tracking-wider">Back</span>
-          </button>
-          <button className="text-zinc-400 hover:text-white transition-colors" onClick={handleBackToLevels}>
-            <LayoutGrid size={24} />
-          </button>
-       </div>
 
-       <div className="mb-6">
-           <div className="bg-indigo-600 rounded-2xl p-6 text-center mb-8 shadow-lg shadow-indigo-900/20">
-               <h3 className="text-2xl font-bold text-white mb-2">Awesome choice!</h3>
-               <p className="text-indigo-200 text-sm font-medium">You selected <span className="text-white font-bold">{selectedLevel?.name}</span>.</p>
-               
-               <div className="flex justify-center gap-8 mt-6">
-                   <div className="text-center">
-                       <span className="block text-2xl font-bold text-white">{selectedLevel?.sentences.length}</span>
-                       <span className="text-[10px] text-indigo-300 uppercase tracking-wider">Cards</span>
-                   </div>
-                   <div className="text-center">
-                       <span className="block text-2xl font-bold text-white">0</span>
-                       <span className="text-[10px] text-indigo-300 uppercase tracking-wider">Seen</span>
-                   </div>
-                   <div className="text-center">
-                       <span className="block text-2xl font-bold text-white">~5</span>
-                       <span className="text-[10px] text-indigo-300 uppercase tracking-wider">Mins</span>
-                   </div>
-               </div>
-           </div>
-
-           <h2 className="text-xl font-bold text-white mb-4">Choose how to study</h2>
-
-           <div className="grid gap-4">
-             {/* Flashcards Option */}
-             <button
-               onClick={() => handleModeSelect('flashcards')}
-               className="group bg-zinc-900 border border-zinc-800 p-5 rounded-2xl hover:bg-zinc-800 transition-all text-left flex items-center gap-4"
-             >
-                <div className="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 shrink-0">
-                   <Layers size={24} />
-                </div>
-                <div className="flex-1">
-                   <h3 className="text-lg font-bold text-white">Flashcards</h3>
-                   <p className="text-zinc-500 text-xs mt-1">Flip & learn at your pace</p>
-                </div>
-                <ChevronLeft className="rotate-180 text-zinc-700 group-hover:text-white transition-colors" size={20} />
-             </button>
-
-             {/* Fill Blank Option */}
-             <button
-               onClick={() => handleModeSelect('fill-blank')}
-               className="group bg-zinc-900 border border-zinc-800 p-5 rounded-2xl hover:bg-zinc-800 transition-all text-left flex items-center gap-4"
-             >
-                <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 shrink-0">
-                   <PenTool size={24} />
-                </div>
-                <div className="flex-1">
-                   <h3 className="text-lg font-bold text-white">Quiz Mode</h3>
-                   <p className="text-zinc-500 text-xs mt-1">Complete the sentences</p>
-                </div>
-                <ChevronLeft className="rotate-180 text-zinc-700 group-hover:text-white transition-colors" size={20} />
-             </button>
-           </div>
-       </div>
-    </div>
-  );
 
   const renderGame = () => {
     if (!selectedLevel) return null;
 
+    const gameData = sourceView === 'speaking'
+      ? selectedLevel.sentences
+      : prepareGameData(selectedLevel.sentences);
+
     if (gameMode === 'flashcards') {
+      if (sourceView === 'speaking') {
+        return (
+          <SpeakingFlashcardMode 
+            key={gameKey}
+            data={gameData} 
+            levelName={selectedLevel.name}
+            onExit={handleExitGame} 
+            onNextGame={handleNextGame}
+            onAnotherLevel={handleAnotherLevelSameMode}
+          />
+        );
+      }
+
       return (
         <FlashcardMode 
-          data={selectedLevel.sentences} 
+          key={gameKey}
+          data={gameData} 
           levelName={selectedLevel.name}
           onExit={handleExitGame} 
+          onNextGame={handleNextGame}
+          onAnotherLevel={handleAnotherLevelSameMode}
         />
       );
+    }
+
+    if (gameMode === 'fill-blank' && selectedLevel.mode === 'vocabulary') {
+      return (
+        <VocabularyMode 
+          key={gameKey}
+          data={gameData} 
+          levelName={selectedLevel.name}
+          onExit={handleExitGame} 
+          onNextGame={handleNextGame}
+          onAnotherLevel={handleAnotherLevelSameMode}
+        />
+      )
     }
     
     return (
       <FillBlankMode 
-        data={selectedLevel.sentences} 
+        key={gameKey}
+        data={gameData} 
         levelName={selectedLevel.name}
-        onExit={handleExitGame} 
+        onExit={handleExitGame}
+        onNextGame={handleNextGame}
+        onAnotherLevel={handleAnotherLevelSameMode}
       />
     );
   };
 
+  const renderSpeakingView = () => (
+    <div className="min-h-screen max-w-7xl bg-black flex flex-col p-6 mx-auto w-full">
+      <ScreenHeader
+        onHomeClick={homeClick}
+        onSpeakingClick={speakingClick}
+        view={view}
+      />
+      <SpeakingView
+        onSelectLevel={(level, mode) => handleLevelAndModeSelect(level, mode, 'speaking')}
+        levelSelectionCounters={levelSelectionCounters}
+      />
+    </div>
+  );
+
   return (
     <div className="font-sans selection:bg-indigo-500/30">
       {view === 'levels' && renderLevelSelection()}
-      {view === 'modes' && renderModeSelection()}
+      {view === 'speaking' && renderSpeakingView()}
       {view === 'game' && renderGame()}
     </div>
   );

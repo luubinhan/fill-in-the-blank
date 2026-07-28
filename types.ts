@@ -1,21 +1,19 @@
 export interface Sentence {
-  id: string;
   english: string;
-  translation: string; // Or explanation/hint
-  difficulty?: 'easy' | 'medium' | 'hard';
+  translation: string;
+  vietnamese?: string;
 }
 
 export type GameMode = 'flashcards' | 'fill-blank';
 
-export type ViewState = 'levels' | 'modes' | 'game';
+export type ViewState = 'levels' | 'speaking' | 'game';
+
+export type LevelMode = 'vocabulary' | 'flashcards' | 'fill-blank';
 
 export interface Level {
-  id: string;
   name: string;
   description: string;
-  difficulty: 'easy' | 'medium' | 'hard';
-  color: string;
-  accentColor: string;
+  mode: LevelMode;
   sentences: Sentence[];
 }
 
@@ -24,3 +22,5 @@ export interface ProgressStats {
   needsReview: number;
   total: number;
 }
+
+export type LevelSelectionCounters = Record<string, number>;

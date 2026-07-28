@@ -10,12 +10,12 @@
 
 ## Global Constraints
 
-- Commits land on branch `main`.
+- Commits land on branch `dev` (Option C: leave `main` alone; unrelated histories).
 - Spec: `docs/superpowers/specs/2026-07-29-incorrect-answers-completion-design.md`
 - No automated test harness in this repo; verify manually per task.
 - Do not show the user’s typed wrong answer.
 - Do not change Flashcard / SpeakingFlashcard completion copy or props beyond staying compatible with optional `incorrectItems`.
-- Target app structure is the one with `components/shared/CompletionScreen.tsx` (currently on `origin/dev`). If `main` lacks those files, merge `origin/dev` into `main` before feature tasks.
+- Target app structure includes `components/shared/CompletionScreen.tsx` on `dev`.
 
 ## File Structure
 
@@ -27,45 +27,26 @@
 
 ---
 
-### Task 1: Base codebase on `main`
+### Task 1: Confirm base codebase on `dev`
 
 **Files:**
 - Ensure present: `components/shared/CompletionScreen.tsx`, `components/FillBlankMode.tsx`, `components/VocabularyMode.tsx` (and their existing deps: `GameHeader`, `LoadingLottie`, `useKeyboardNavigation`, etc.)
 
 **Interfaces:**
-- Consumes: `origin/dev` tree that already uses `CompletionScreen`
-- Produces: working tree on `main` with those files so Tasks 2–4 apply cleanly
+- Consumes: current `dev` tree that already uses `CompletionScreen`
+- Produces: confirmed buildable base on `dev` so Tasks 2–4 apply cleanly
 
 - [ ] **Step 1: Confirm branch and whether CompletionScreen exists**
 
 ```bash
-git checkout main
+git checkout dev
 git status -sb
 test -f components/shared/CompletionScreen.tsx && echo HAS_COMPLETION || echo MISSING_COMPLETION
 ```
 
-Expected: on `main`. If `HAS_COMPLETION`, skip to Step 3. If `MISSING_COMPLETION`, continue Step 2.
+Expected: on `dev` and `HAS_COMPLETION`. If missing, stop and escalate (do not merge unrelated `main`).
 
-- [ ] **Step 2: Merge `origin/dev` into `main` (only if Step 1 said MISSING)**
-
-```bash
-git fetch origin
-git merge origin/dev -m "$(cat <<'EOF'
-merge: bring origin/dev into main for incorrect-answers feature base
-
-EOF
-)"
-```
-
-Resolve conflicts if any (prefer keeping `docs/superpowers/` from main + app components from dev). Confirm:
-
-```bash
-test -f components/shared/CompletionScreen.tsx && test -f components/VocabularyMode.tsx && echo READY
-```
-
-Expected: `READY`
-
-- [ ] **Step 3: Smoke-check app still builds**
+- [ ] **Step 2: Smoke-check app still builds**
 
 ```bash
 npm run build
@@ -73,18 +54,9 @@ npm run build
 
 Expected: Vite build succeeds (exit 0).
 
-- [ ] **Step 4: Commit only if Step 2 produced a merge commit that is not yet committed**
+- [ ] **Step 3: No commit required if only verification**
 
-If Step 2 already created the merge commit, do nothing. If you resolved conflicts and need a follow-up:
-
-```bash
-git add -A
-git commit -m "$(cat <<'EOF'
-merge: resolve conflicts after bringing origin/dev onto main
-
-EOF
-)"
-```
+If docs/spec/plan need to land on `dev` from elsewhere, cherry-pick those commits; otherwise no commit.
 
 ---
 
@@ -192,7 +164,7 @@ npm run build
 
 Expected: exit 0.
 
-- [ ] **Step 4: Commit on `main`**
+- [ ] **Step 4: Commit on `dev`**
 
 ```bash
 git add components/shared/CompletionScreen.tsx
@@ -288,7 +260,7 @@ npm run dev
 
 In FillBlank: miss ≥1 question, finish session. Expect Missed list with english prompt + translation answer. Perfect run: no list. Restart: list gone.
 
-- [ ] **Step 5: Commit on `main`**
+- [ ] **Step 5: Commit on `dev`**
 
 ```bash
 git add components/FillBlankMode.tsx
@@ -376,7 +348,7 @@ npm run dev
 
 Vocabulary: miss ≥1 → Missed list shows translation prompt + hidden english word. Perfect → no list. Restart clears. Flashcard finish → no Missed section.
 
-- [ ] **Step 5: Commit on `main`**
+- [ ] **Step 5: Commit on `dev`**
 
 ```bash
 git add components/VocabularyMode.tsx
@@ -401,5 +373,5 @@ EOF
 | Vocabulary mapping + accumulate + restart clear | Task 4 |
 | Flashcards unchanged | Task 2 optional prop; Task 4 verify |
 | Manual verification | Tasks 3–4 |
-| Commits on `main` | All tasks |
-| Base files exist on `main` | Task 1 |
+| Commits on `dev` | All tasks |
+| Base files exist on `dev` | Task 1 |
