@@ -56,4 +56,4 @@ On restart: clear `incorrectItems`, score, and current index (same as today for 
 
 ## Git
 
-Implement and commit on `main`.
+Implement and commit on `dev`.
