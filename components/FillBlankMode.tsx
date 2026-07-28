@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Sentence } from '../types';
 import { Check, X, ArrowRight } from 'lucide-react';
 import GameHeader from './shared/GameHeader';
-import CompletionScreen from './shared/CompletionScreen';
+import CompletionScreen, { IncorrectItem } from './shared/CompletionScreen';
 import LoadingLottie from './shared/LoadingLottie';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 
@@ -29,6 +29,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gameState, setGameState] = useState<QuestionState | null>(null);
   const [score, setScore] = useState(0);
+  const [incorrectItems, setIncorrectItems] = useState<IncorrectItem[]>([]);
   const [isFinished, setIsFinished] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -59,7 +60,17 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
     if (!gameState || gameState.isSubmitted) return;
     const isCorrect = gameState.userAnswer.toLowerCase().trim() === gameState.hiddenWord.toLowerCase();
     setGameState(prev => prev ? { ...prev, isCorrect, isSubmitted: true } : null);
-    if (isCorrect) setScore(s => s + 1);
+    if (isCorrect) {
+      setScore(s => s + 1);
+    } else {
+      setIncorrectItems(prev => [
+        ...prev,
+        {
+          prompt: gameState.sentence,
+          correctAnswer: gameState.hiddenWord,
+        },
+      ]);
+    }
   };
 
   const handleNext = useCallback(() => {
@@ -68,6 +79,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
 
   const handleRestart = () => {
     setScore(0);
+    setIncorrectItems([]);
     setCurrentIndex(0);
     setIsFinished(false);
   };
@@ -90,6 +102,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
         onNextGame={onNextGame}
         onAnotherLevel={onAnotherLevel}
         mode="quiz"
+        incorrectItems={incorrectItems}
       />
     );
   }
