@@ -10,12 +10,14 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "framer-motion": "^12.34.3",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.556.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "react-quizlet-flashcard": "^4.0.22"
+    "react-quizlet-flashcard": "^4.0.22",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

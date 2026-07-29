@@ -47,7 +47,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
       </p>
 
       {showMissed && (
-        <div className="w-full scrollbar-thumb-sky-700 scrollbar-track-sky-100 max-w-xs mb-8 text-left max-h-48 overflow-y-auto ">
+        <div className="w-full scrollbar-thumb-indigo-700 scrollbar-track-gray-100/10 max-w-xs mb-8 text-left max-h-48 overflow-y-auto ">
           <p className="text-xs font-bold text-zinc-500 tracking-widest uppercase mb-3">Missed</p>
           <ul className="space-y-3">
             {incorrectItems.map((item, index) => (
