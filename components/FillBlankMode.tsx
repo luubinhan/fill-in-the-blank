@@ -145,7 +145,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
                   w-full border-b-2 border-lime-400 text-center text-xl border-b-2 bg-transparent px-4 py-3 outline-none transition-all font-medium placeholder-blue-300
                   ${gameState.isSubmitted 
                     ? gameState.isCorrect 
-                    ? 'border-mist-500 text-mist-500' 
+                    ? 'border-green-300 text-green-300' 
                     : 'border-rose-500 text-rose-500'
                     : 'border-blue-500 text-white focus:border-blue-300'
                   }
