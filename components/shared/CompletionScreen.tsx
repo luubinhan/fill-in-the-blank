@@ -38,11 +38,6 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
       <div className={`w-20 h-20 ${bgColor} rounded-full flex items-center justify-center mb-6`}>
         <span className="text-4xl">{emoji}</span>
       </div>
-
-      <h2 className="text-3xl font-bold text-white mb-2">
-        {isQuizMode ? 'Practice Complete!' : 'Session Complete!'}
-      </h2>
-
       <p className={`text-zinc-400 max-w-xs mx-auto ${showMissed ? 'mb-4' : 'mb-8'}`}>
         {isQuizMode ? (
           <>You scored <span className={`${scoreColor} font-bold`}>{score}</span> out of {totalQuestions}.</>
@@ -52,7 +47,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
       </p>
 
       {showMissed && (
-        <div className="w-full max-w-xs mb-8 text-left max-h-48 overflow-y-auto">
+        <div className="w-full scrollbar-thumb-sky-700 scrollbar-track-sky-100 max-w-xs mb-8 text-left max-h-48 overflow-y-auto ">
           <p className="text-xs font-bold text-zinc-500 tracking-widest uppercase mb-3">Missed</p>
           <ul className="space-y-3">
             {incorrectItems.map((item, index) => (
