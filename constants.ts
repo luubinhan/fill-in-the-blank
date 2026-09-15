@@ -15,6 +15,7 @@ import { HowAreYou } from './data/how-are-you';
 import { ConditionalStatements } from './data/if-condition';
 import { Tired } from './data/tired';
 import { SpeakingFramework } from './data/speaking-framework';
+import { DavinciResolve } from './data/davinci-resolve';
 
 export const LEVELS: Level[] = [
   SpeakingFramework,
@@ -33,4 +34,5 @@ export const LEVELS: Level[] = [
   DisagreeingPolitely,
   ConditionalStatements,
   Get,
+  DavinciResolve,
 ];
