@@ -128,7 +128,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
 
         {/* Question Card */}
         <div className="bg-lime-600 border border-lime-500 rounded-[2rem] p-8 mb-6 flex-1 flex flex-col justify-between items-center">
-          <div className="text-mist-500 px-2 py-1 text-center border border-lime-700 rounded-lg text-sm">{data[currentIndex]?.translation || ''}</div>
+          <div className="text-lime-100 px-2 py-1 text-center border border-lime-100 rounded-lg text-sm">{data[currentIndex]?.translation || ''}</div>
             <div className="text-2xl sm:text-3xl font-bold text-white leading-relaxed flex flex-wrap gap-x-2 gap-y-4 justify-center items-center text-center">
             {gameState.parts.map((word, idx) => {
                 if (idx === gameState.hiddenWordIndex) {
@@ -148,7 +148,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
                             text-center border-b-2 border-lime-400 bg-transparent px-2 py-1 outline-none transition-all font-sans font-bold placeholder-lime-300
                             ${gameState.isSubmitted 
                             ? gameState.isCorrect 
-                                ? 'border-green-300 text-green-300' 
+                                ? 'border-green-300 text-lime-100' 
                                 : 'border-rose-500 text-rose-500'
                             : 'border-lime-600 text-white focus:border-lime-200'
                             }
