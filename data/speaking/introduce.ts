@@ -6,14 +6,14 @@ export const Introduce = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "but everyone at work calls me Andy. I’m a father of a six-year-old daughter",
+            english: "Hi, my full name is Luu Binh An, but everyone at work just calls me Andy",
             translation: "at work",
             vietnamese: "tại nơi làm việc"
         },
         {
-            english: "I’ve been with the company since 2019, and currently I’m a principal developer on the MessageMedia team.",
-            translation: "been with",
-            vietnamese: "đã làm việc với"
+            english: "I’m 38 and a father to a 6-year-old daughter. Currently, I’m working as a software developer on the MessageMedia team, which I joined back in 2019.",
+            translation: "back in",
+            vietnamese: "vào năm"
         },
         {
             english: "I’m originally from a small town in south of Vietnam, near the Cambodian border.",
@@ -21,54 +21,54 @@ export const Introduce = {
             vietnamese: "miền nam"
         },
         {
-            english: "My town is well known for its huge rice fields in the Mekong Delta",
-            translation: "well known",
-            vietnamese: "nổi tiếng"
+            english: "I was originally born in a small village in An Giang province, down in southern Vietnam.",
+            translation: "down in",
+            vietnamese: "xuống miền"
         },
         {
-            english: "About 20 years ago, I moved to Ho Chi Minh City to study computer science",
+            english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University, and I’ve been working as a dev ever since I graduated.",
             translation: "moved to",
             vietnamese: "chuyển đến"
         },
         {
-            english: "and I’ve been living here ever since.",
-            translation: "living here",
-            vietnamese: "sống ở đây"
+            english: "My daily routine is pretty simple. I usually wake up around 6 AM",
+            translation: "daily routine",
+            vietnamese: "thói quen hàng ngày"
         },
         {
-            english: "A typical day for me starts around 6 a.m",
-            translation: "starts around",
-            vietnamese: "bắt đầu vào khoảng"
+            english: "go for a 30-minute run, and then drop my daughter off at school before heading to the office.",
+            translation: "drop my daughter off",
+            vietnamese: "đưa con gái tôi đến trường"
         },
         {
-            english: "I usually go for a 30-minute run, then take my daughter to school before heading to the office",
-            translation: "30-minute run",
-            vietnamese: "chạy 30 phút"
-        },
-        {
-            english: "I also try to wrap up work by around 6 p.m.",
-            translation: "wrap up work",
+            english: "I always try to wrap things up by 6 PM so I can pick her up.",
+            translation: "wrap things up",
             vietnamese: "kết thúc công việc"
         },
         {
-            english: "Outside of work, I enjoy running, watching movies, and living a simple lifestyle.",
-            translation: "simple lifestyle",
-            vietnamese: "lối sống đơn giản"
+            english: "In the evening, I spend most of my time with my family",
+            translation: "In the evening",
+            vietnamese: "vào buổi tối"
         },
         {
-            english: "Something that really matters to me is minimalism.",
-            translation: "minimalism",
-            vietnamese: "chủ nghĩa tối giản"
+            english: "For me, family is always the top priority outside of work, needless to say family matters most.",
+            translation: "top priority",
+            vietnamese: "ưu tiên hàng đầu"
         },
         {
-            english: "I always try to simplify my life because I believe the less you desire, the more freedom you have",
-            translation: "more freedom",
-            vietnamese: "tự do hơn"
+            english: "Another thing that really matters to me as I’ve gotten older is minimalism",
+            translation: "as I’ve gotten older",
+            vietnamese: "khi tôi già đi"
         },
         {
-            english: "over the past ten years, I now spend less time chasing bigger things and I have much more time for myself",
-            translation: "chasing bigger things",
-            vietnamese: "đuổi theo những thứ lớn hơn"
+            english: "I’ve realized that having more stuff doesn’t solve my problems.",
+            translation: "having more stuff",
+            vietnamese: "có nhiều thứ hơn"
+        },
+        {
+            english: "Instead, the fewer desires I have, the more my problems just seem to disappear.",
+            translation: "fewer desires",
+            vietnamese: "ít ham muốn hơn"
         },
     ]
 } satisfies Level;
