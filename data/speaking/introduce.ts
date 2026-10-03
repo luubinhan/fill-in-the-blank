@@ -16,11 +16,6 @@ export const Introduce = {
             vietnamese: "vào năm"
         },
         {
-            english: "I’m originally from a small town in south of Vietnam, near the Cambodian border.",
-            translation: "south",
-            vietnamese: "miền nam"
-        },
-        {
             english: "I was originally born in a small village in An Giang province, down in southern Vietnam.",
             translation: "down in",
             vietnamese: "xuống miền"
