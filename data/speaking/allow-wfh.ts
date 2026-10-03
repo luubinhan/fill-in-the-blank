@@ -11,7 +11,7 @@ export const AllowRemoteWork = {
         vietnamese: "chắc chắn nghĩ"
       },
       {
-        english: "Of course, I understand that there are certain jobs that require employees to work on-site. For example, healthcare workers",
+        english: "Of course, I understand that there are certain jobs that require employees to work on-site.",
         translation: "there are certain jobs",
         vietnamese: "có một số công việc nhất định"
       },
