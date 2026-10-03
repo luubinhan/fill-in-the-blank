@@ -6,22 +6,22 @@ export const Introduce = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "Hi, my full name is Luu Binh An, but everyone at work just calls me Andy",
+            english: "Hi, my full name is Luu Binh An, but everyone at work just calls me Andy.",
             translation: "at work",
             vietnamese: "tại nơi làm việc"
         },
         {
-            english: "I’m 38 and a father to a 6-year-old daughter. Currently, I’m working as a software developer on the MessageMedia team, which I joined back in 2019.",
+            english: "I’m 38, and I’m a father to a six-year-old daughter. I currently work as a software developer on the MessageMedia team, which I joined back in 2019.",
             translation: "back in",
             vietnamese: "vào năm"
         },
         {
-            english: "I was originally born in Óc Eo, a quiet little town in An Giang Province. You’ll mostly see small, cozy houses surrounded by mountains and rice fields.",
+            english: "I was born in Óc Eo, a quiet little town in An Giang Province. It’s a pretty peaceful place, with small, cozy houses surrounded by mountains and rice fields.",
             translation: "surrounded by",
             vietnamese: "bị bao quanh bởi"
         },
         {
-            english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University, and I’ve been working as a dev ever since I graduated.",
+            english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University, and I’ve been working as a developer ever since I graduated.",
             translation: "moved to",
             vietnamese: "chuyển đến"
         },
@@ -36,34 +36,34 @@ export const Introduce = {
             vietnamese: "đưa con gái tôi đến trường"
         },
         {
-            english: "I always try to wrap things up by 6 PM so I can pick her up.",
+            english: "I try to wrap things up by 6 PM so I can pick her up.",
             translation: "wrap things up",
             vietnamese: "kết thúc công việc"
         },
         {
-            english: "In the evening, I spend most of my time with my family",
+            english: "In the evening, I spend most of my time with my family.",
             translation: "In the evening",
             vietnamese: "vào buổi tối"
         },
         {
-            english: "For me, family is always the top priority outside of work, needless to say family matters most.",
-            translation: "top priority",
+            english: "For me, family always comes first outside of work. Needless to say, they mean a lot to me.",
+            translation: "comes first",
             vietnamese: "ưu tiên hàng đầu"
         },
         {
-            english: "Another thing that really matters to me as I’ve gotten older is minimalism",
+            english: "Another thing that’s become more important to me as I’ve gotten older is minimalism.",
             translation: "as I’ve gotten older",
             vietnamese: "khi tôi già đi"
         },
         {
-            english: "I’ve realized that having more stuff doesn’t solve my problems.",
+            english: "I’ve realized that having more stuff doesn’t make life better or solve my problems.",
             translation: "having more stuff",
             vietnamese: "có nhiều thứ hơn"
         },
         {
-            english: "Instead, the fewer desires I have, the more my problems just seem to disappear.",
-            translation: "fewer desires",
-            vietnamese: "ít ham muốn hơn"
+            english: "In fact, the fewer things I want, the fewer problems I seem to have.",
+            translation: "fewer things",
+            vietnamese: "ít thứ hơn"
         },
     ]
 } satisfies Level;
