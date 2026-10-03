@@ -16,9 +16,9 @@ export const Introduce = {
             vietnamese: "vào năm"
         },
         {
-            english: "I was originally born in a small village in An Giang province, down in southern Vietnam.",
-            translation: "down in",
-            vietnamese: "xuống miền"
+            english: "I was originally born in Óc Eo, a quiet little town in An Giang Province. You’ll mostly see small, cozy houses surrounded by mountains and rice fields.",
+            translation: "surrounded by",
+            vietnamese: "bị bao quanh bởi"
         },
         {
             english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University, and I’ve been working as a dev ever since I graduated.",
