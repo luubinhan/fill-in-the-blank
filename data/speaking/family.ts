@@ -6,29 +6,29 @@ export const Family = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "I strongly believe that family should always come first",
+            english: "I really believe that family should always come first.",
             translation: "strongly",
             vietnamese: "rất"
         },
         {
-            english: "They are undoubtedly the most important people in our lives",
+            english: "It goes without saying that they’re the most important people in our lives.",
             translation: "undoubtedly",
             vietnamese: "chắc chắn"
         },
         {
-            english: "they provide us with unwavering support whenever we face challenges",
-            translation: "unwavering",
-            vietnamese: "vững chắc"
+            english: "and they’re always there for us when things get tough",
+            translation: "get tough",
+            vietnamese: "trở nên khó khăn"
         },
         {
-            english: "Family truly serves as the foundation for building a happy and stable life",
-            translation: "building",
-            vietnamese: "xây dựng"
+            english: "I think family is really the foundation of a happy and stable life",
+            translation: "foundation",
+            vietnamese: "nền tảng"
         },
         {
-            english: "For me, everything I do, every effort I make, is ultimately driven by my desire to give my family a better life",
-            translation: "ultimately driven",
-            vietnamese: "cuối cùng được thúc đẩy"
+            english: "For me, everything I do — all the effort I put in — comes down to one thing: giving my family a better life.",
+            translation: "comes down to",
+            vietnamese: "tất cả đều nhằm mục đích"
         },
     ]
 } satisfies Level;
