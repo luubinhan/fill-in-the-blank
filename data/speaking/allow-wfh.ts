@@ -26,7 +26,7 @@ export const AllowRemoteWork = {
         vietnamese: "tránh căng thẳng khi đi làm"
       },
       {
-        english: "As a result, we may feel happier, more motivated, and ultimately become more productive",
+        english: "As a result, we may feel happier, more motivated, and become more productive",
         translation: "become more productive",
         vietnamese: "trở nên năng suất hơn"
       },
