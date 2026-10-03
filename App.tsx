@@ -4,6 +4,7 @@ import { GameMode, ViewState, Level, LevelSelectionCounters } from './types';
 import FlashcardMode from './components/FlashcardMode';
 import SpeakingFlashcardMode from './components/SpeakingFlashcardMode';
 import FillBlankMode from './components/FillBlankMode';
+import SpeakingMode from './components/SpeakingMode';
 import VocabularyMode from './components/VocabularyMode';
 import SpeakingView from './components/SpeakingView';
 import ScreenHeader from './components/ScreenHeader';
@@ -34,7 +35,7 @@ function getInitialStateFromURL(): {
     return { view: isSpeakingPath ? 'speaking' : 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: isSpeakingPath ? 'speaking' : 'levels' };
   }
 
-  const validModes: GameMode[] = ['flashcards', 'fill-blank'];
+  const validModes: GameMode[] = ['flashcards', 'fill-blank', 'speaking'];
   const mode = validModes.includes(modeParam as GameMode) ? (modeParam as GameMode) : null;
   if (!mode) {
     return { view: 'levels', gameMode: 'flashcards', selectedLevel: null, sourceView: 'levels' };
@@ -273,6 +274,19 @@ function App() {
           data={gameData} 
           levelName={selectedLevel.name}
           onExit={handleExitGame} 
+          onNextGame={handleNextGame}
+          onAnotherLevel={handleAnotherLevelSameMode}
+        />
+      );
+    }
+
+    if (gameMode === 'speaking') {
+      return (
+        <SpeakingMode
+          key={gameKey}
+          data={selectedLevel.sentences}
+          levelName={selectedLevel.name}
+          onExit={handleExitGame}
           onNextGame={handleNextGame}
           onAnotherLevel={handleAnotherLevelSameMode}
         />

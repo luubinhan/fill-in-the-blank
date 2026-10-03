@@ -4,7 +4,7 @@ export interface Sentence {
   vietnamese?: string;
 }
 
-export type GameMode = 'flashcards' | 'fill-blank';
+export type GameMode = 'flashcards' | 'fill-blank' | 'speaking';
 
 export type ViewState = 'levels' | 'speaking' | 'game';
 
