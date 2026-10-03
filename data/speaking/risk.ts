@@ -11,29 +11,29 @@ export const Risk = {
             vietnamese: "tiến lên"
         },
         {
-            english: "It pushes  you out of your comfort zone and gives you a chance to learn and grow.",
+            english: "It pushes you out of your comfort zone and gives you a chance to learn and grow.",
             translation: "pushes",
             vietnamese: "đẩy"
         },
         {
-            english: "You know, like people say, if you keep doing the same thing, you'll keep getting the same results.",
-            translation: "getting",
+            english: "You know, as they say, if you keep doing the same thing, you’ll keep getting the same results.",
+            translation: "keep getting",
             vietnamese: "nhận được"
         },
         {
-            english: "Of course, you shouldn't take risks blindly",
+            english: "Of course, you shouldn’t take risks blindly.",
             translation: "blindly",
             vietnamese: "mù quáng"
         },
         {
-            english: "You've got to prepare yourself for what might go wrong.",
-            translation: "might",
-            vietnamese: "có thể"
+            english: "You have got to prepare yourself for what could go wrong.",
+            translation: "have got",
+            vietnamese: "phải chuẩn bị"
         },
         {
-            english: "For instance, quitting your job without saving up for a few months would be a really bad idea.",
-            translation: "saving up",
-            vietnamese: "tiết kiệm"
+            english: "For example, quitting your job without having enough savings to get you through a few months would be a really bad idea.",
+            translation: "having enough savings",
+            vietnamese: "có đủ tiền tiết kiệm"
         },
     ]
 } satisfies Level;
