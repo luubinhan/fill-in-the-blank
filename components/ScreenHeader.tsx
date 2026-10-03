@@ -12,7 +12,7 @@ const ScreenHeader: React.FC<ScreenHeaderProps> = ({ onSpeakingClick, onHomeClic
     <div className="flex items-center gap-4">
       <div className={`${
         view === 'levels' ? 'text-violet-400' : 'text-zinc-400 hover:text-violet-400'} 
-        transition-colors cursor-pointer`}
+        cursor-pointer transition-colors cursor-pointer`}
         onClick={onHomeClick}
       >
         <LayoutGrid size={24} onClick={onHomeClick} className="cursor-pointer" />

@@ -11,7 +11,7 @@ const GameHeader: React.FC<GameHeaderProps> = ({ onExit, levelName, modeName }) 
   <div className="w-full max-w-md mx-auto px-6 py-4 flex justify-between items-center pt-8">
     <button 
       onClick={onExit}
-      className="text-zinc-400 hover:text-white transition-colors"
+      className="cursor-pointer text-zinc-400 hover:text-white transition-colors"
     >
       <LayoutGrid size={24} />
     </button>
