@@ -6,54 +6,69 @@ export const PlaceToLive = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "There are a few factors that make a place a good place to live",
-            translation: "factors",
-            vietnamese: "yếu tố"
+            english: "There are a few things I think are important when choosing a place to live.",
+            translation: "important",
+            vietnamese: "quan trọng"
         },
         {
-            english: "First, it should be close to nature",
+            english: "First, I’d prefer somewhere that’s close to nature.",
             translation: "nature",
             vietnamese: "thiên nhiên"
         },
         {
-            english: "I believe that the closer you are to nature, the happier you feel",
+            english: "I feel like the closer you are to nature, the happier and more relaxed you tend to feel",
             translation: "closer",
             vietnamese: "gần gũi hơn"
         },
         {
-            english: "Overcrowded cities like Ho Chi Minh City often have problems such as pollution, noise, and heavy traffic,",
+            english: "For example, living in a crowded city like Ho Chi Minh City can be quite stressful because of the pollution, noise, and heavy traffic",
             translation: "pollution",
             vietnamese: "ô nhiễm"
         },
         {
-            english: "which can make daily life quite stressful and unpleasant.",
-            translation: "stressful",
-            vietnamese: "căng thẳng"
+            english: "So having access to parks, green spaces, or even just a quieter environment can make a big difference to your quality of life.",
+            translation: "quality of life",
+            vietnamese: "chất lượng cuộc sống"
         },
         {
-            english: "Secondly, a good place should offer job opportunities, especially in the field you’re passionate about",
+            english: "Another important factor is having good job opportunities, especially in a field you’re passionate about",
             translation: "job opportunities",
             vietnamese: "cơ hội việc làm"
         },
         {
-            english: "Thirdly, it’s important to have access to high-quality education and healthcare services. ",
-            translation: "education and healthcare services",
-            vietnamese: "dịch vụ giáo dục và y tế"
+            english: "After all, we spend a big part of our lives working, so I think it’s important to have a job that you enjoy and that gives you opportunities to grow.",
+            translation: "job that you enjoy",
+            vietnamese: "công việc mà bạn thích"
         },
         {
-            english: "This is especially crucial for your children’s future and also for your well-being as you get older.",
-            translation: "well-being",
-            vietnamese: "sức khỏe và hạnh phúc"
+            english: "Finally, I think access to good education and healthcare is really important",
+            translation: "education and healthcare",
+            vietnamese: "giáo dục và chăm sóc sức khỏe"
         },
         {
-            english: "Overall, these are my top priorities when choosing a place to live.",
+            english: "This becomes especially important if you have children, because you want them to have good opportunities in the future.",
+            translation: "especially important",
+            vietnamese: "đặc biệt quan trọng"
+        },
+        {
+            english: "And as you get older, having reliable healthcare nearby becomes even more important.",
+            translation: "reliable healthcare",
+            vietnamese: "chăm sóc sức khỏe đáng tin cậy"
+        },
+        {
+            english: "And as you get older, having reliable healthcare nearby becomes even more important.",
+            translation: "reliable healthcare",
+            vietnamese: "chăm sóc sức khỏe đáng tin cậy"
+        },
+        {
+            english: "Overall, these would be my top priorities when choosing a place to live.",
             translation: "top priorities",
             vietnamese: "ưu tiên hàng đầu"
         },
         {
-            english: "However, I know it’s difficult to find a place that has everything, so sometimes you have to balance and compromise on a few things",
-            translation: "balance and compromise",
-            vietnamese: "cân bằng và thỏa hiệp"
+            english: "Of course, it’s hard to find a place that has everything, so you usually have to make a few compromises and decide what matters most to you.",
+            translation: "compromises",
+            vietnamese: "sự thỏa hiệp"
         },
     ]
 } satisfies Level;
