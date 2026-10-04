@@ -6,34 +6,39 @@ export const TimeOfTheYear = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "For me, the best moment of the year is definitely the Tet holiday.",
-            translation: "definitely",
-            vietnamese: "chắc chắn"
+            english: "For me, the best time of the year is definitely Tet.",
+            translation: "best time of the year",
+            vietnamese: "thời điểm tốt nhất trong năm"
         },
         {
-            english: "It's the time when I go back to my hometown and spend some real quality time with my parents",
+            english: "The main reason is that it’s when I get to go back to my hometown and spend some quality time with my parents.",
             translation: "quality time",
             vietnamese: "thời gian chất lượng"
         },
         {
-            english: "Since it's the longest holiday of the year, I actually get enough time to relax and reflect on what I've achieved over the past twelve months.",
+            english: "Since Tet is the longest holiday of the year, I finally have enough time to slow down, relax, and reflect on what I’ve achieved over the past year.",
             translation: "reflect",
             vietnamese: "suy ngẫm"
         },
         {
-            english: "what I've achieved over the past twelve months.",
-            translation: "twelve months",
-            vietnamese: "mười hai tháng"
-        },
-        {
-            english: "There are also a few activities I reallylook forward to during Tet like visiting my relatives, hanging out with my high-school friends",
-            translation: "look forward",
+            english: "There are also a few things I really look forward to doing during Tet.",
+            translation: "look forward to",
             vietnamese: "mong đợi"
         },
         {
-            english: "and going to the pagoda to wish for a healthy and peaceful new year.",
-            translation: "wish for",
-            vietnamese: "cầu chúc"
+            english: "For example, I get to visit my relatives, catch up with my high-school friends, and go to the pagoda to pray for a healthy and peaceful new year.",
+            translation: "catch up with",
+            vietnamese: "hội ngộ"
+        },
+        {
+            english: "So for me, Tet isn’t just a holiday.",
+            translation: "holiday",
+            vietnamese: "kỳ nghỉ"
+        },
+        {
+            english: "It’s a chance to reconnect with my family and friends, take a break from work, and start the new year feeling refreshed.",
+            translation: "reconnect with",
+            vietnamese: "kết nối lại với"
         },
     ]
 } satisfies Level;
