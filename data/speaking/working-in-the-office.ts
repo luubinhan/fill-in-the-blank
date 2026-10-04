@@ -6,62 +6,62 @@ export const WorkingInTheOffice = {
     mode: 'flashcards',
     sentences: [
       {
-        english: "I completely agree that working in the office is better for teamwork",
-        translation: "agree",
-        vietnamese: "đồng ý"
+        english: "I completely agree that working in the office is better for teamwork.",
+        translation: "better for teamwork",
+        vietnamese: "tốt hơn cho làm việc nhóm"
       },
       {
-        english: "I think there are many benefits to working together in person",
-        translation: "in person",
+        english: "One reason is that it’s much easier to communicate when you’re working face to face.",
+        translation: "face to face",
         vietnamese: "trực tiếp"
       },
       {
-        english: "For example, when employees communicate face to face, it is easier to read each other’s emotions, reactions, and body language during discussions",
-        translation: "easier to read",
-        vietnamese: "dễ dàng đọc"
+        english: "You can read people’s reactions, emotions, and body language during a discussion",
+        translation: "reactions",
+        vietnamese: "phản ứng"
       },
       {
-        english: "In my opinion, this is much more effective than chatting online or attending virtual meetings because communication feels more natural",
+        english: "which makes communication feel more natural and effective than just chatting online or sitting in virtual meetings",
         translation: "more natural",
         vietnamese: "tự nhiên hơn"
       },
       {
-        english: "Another important point is that people in the office usually build stronger personal relationships",
-        translation: "stronger personal relationships",
-        vietnamese: "mối quan hệ cá nhân mạnh mẽ hơn"
+        english: "Another point is that working in the office helps people build stronger relationships with their teammates.",
+        translation: "stronger relationships with their teammates",
+        vietnamese: "mối quan hệ mạnh mẽ hơn với các đồng đội của họ"
       },
       {
-        english: "When working remotely, conversations are often limited to work-related topics",
-        translation: "work-related topics",
-        vietnamese: "các chủ đề liên quan đến công việc"
+        english: "When you work remotely, conversations tend to be more focused on work.",
+        translation: "more focused on work",
+        vietnamese: "tập trung hơn vào công việc"
       },
       {
-        english: "However, in the office, coworkers can talk about their weekends, discuss a football match, or even play games together during breaks",
-        translation: "talk about their weekends",
-        vietnamese: "nói về cuối tuần của họ"
+        english: "But when you’re in the office, you can talk about your weekend, chat about a football match, or even play a quick game together during a break",
+        translation: "talk about your weekend",
+        vietnamese: "nói về cuối tuần của bạn"
       },
       {
-        english: "These small interactions help teammates bond more closely and improve collaboration",
-        translation: "bond more closely",
-        vietnamese: "gắn kết chặt chẽ hơn"
+        english: "These small interactions help people get to know each other better, which can lead to better teamwork and collaboration.",
+        translation: "get to know each other better",
+        vietnamese: "hiểu nhau hơn"
       },
       {
-        english: "That being said, working from home also offers many advantages",
-        translation: "offers many advantages",
-        vietnamese: "cung cấp nhiều lợi ích"
+        english: "That being said, working from home definitely has its advantages too. ",
+        translation: "has its advantages",
+        vietnamese: "cũng có những lợi ích"
       },
       {
-        english: "For instance, flexible working can improve work-life balance and reduce the stress of commuting or spending long hours in the office",
-        translation: "reduce the stress of commuting",
-        vietnamese: "giảm căng thẳng khi đi lại"
+        english: "For example, it gives people more flexibility, helps them maintain a better work-life balance, and saves them from commuting or spending long hours in the office.",
+        translation: "commuting or spending",
+        vietnamese: "đi lại hoặc dành nhiều"
       },
       {
-        english: "As a result, employees may feel happier and work more efficiently",
-        translation: "happier",
-        vietnamese: "hạnh phúc hơn"
+        english: "As a result, they may feel less stressed and be more productive.",
+        translation: "less stressed and more productive",
+        vietnamese: "bớt căng thẳng và làm việc hiệu quả hơn"
       },
       {
-        english: "Fortunately, our company offers a hybrid working model, so we can get the best of both worlds",
+        english: "Fortunately, our company has a hybrid working model, so we can get the best of both worlds.",
         translation: "hybrid working model",
         vietnamese: "mô hình làm việc kết hợp"
       },
