@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowRight, Check, Eye, Mic, X } from 'lucide-react';
+import { ArrowRight, Check, Eye, EyeOff, Mic, X } from 'lucide-react';
 import { Sentence } from '../types';
 import GameHeader from './shared/GameHeader';
 import CompletionScreen, { IncorrectItem } from './shared/CompletionScreen';
@@ -286,8 +286,8 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
 
   const handleReveal = () => {
     setGameState((prev) => {
-      if (!prev || prev.isSubmitted || prev.revealed) return prev;
-      const next = { ...prev, revealed: true };
+      if (!prev || prev.isSubmitted) return prev;
+      const next = { ...prev, revealed: !prev.revealed };
       gameStateRef.current = next;
       return next;
     });
@@ -355,7 +355,7 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
                   gameState.isSubmitted && gameState.isCorrect ? (
                     <span className="text-green-300">{phrase.toLowerCase()}</span>
                   ) : (
-                    phrase.toLowerCase()
+                    <span className="text-yellow-400">{phrase.toLowerCase()}</span>
                   )
                 ) : (
                   maskPhrase(phrase)
@@ -384,14 +384,15 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
               <p className="text-center text-sm text-rose-100">{micError}</p>
             )}
 
-            {!gameState.revealed && !gameState.isSubmitted && gameState.range && (
+            {!gameState.isSubmitted && gameState.range && (
               <button
                 type="button"
                 onClick={handleReveal}
-                className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 text-white text-sm font-bold hover:bg-white/20 transition-all"
+                aria-pressed={gameState.revealed}
+                className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white text-sm hover:bg-white/20 transition-all"
               >
-                <Eye size={16} />
-                Show words
+                {gameState.revealed ? <EyeOff size={16} /> : <Eye size={16} />}
+                {gameState.revealed ? 'Hide words' : 'Show words'}
               </button>
             )}
 
@@ -415,7 +416,7 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
               type="button"
               onClick={handleMicClick}
               disabled={!speechSupported}
-              className="cursor-pointer w-full py-4 bg-blue-600 disabled:bg-zinc-800 disabled:text-gray-600 hover:bg-blue-500 text-white rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2"
+              className="cursor-pointer w-full py-4 bg-yellow-500 disabled:bg-zinc-800 disabled:text-gray-600 hover:bg-yellow-400 text-white rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2"
             >
               <Mic size={20} />
               {isListening ? 'Stop and score' : 'Start listening'}
