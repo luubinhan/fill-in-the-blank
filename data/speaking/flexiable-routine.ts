@@ -6,22 +6,22 @@ export const FlexibleRoutine = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "Personally speaking, I would rather have a flexible routine instead of a stable one",
+            english: "Personally, I would rather have a flexible routine than a fixed one.",
             translation: "would rather have",
             vietnamese: "thích hơn"
         },
         {
-            english: "Maybe it’s because I’m quite an open-minded person",
-            translation: "open-minded person",
-            vietnamese: "người cởi mở"
+            english: "I guess it’s because I’m quite open-minded, and I like having the freedom to change things up depending on the situation.",
+            translation: "change things up",
+            vietnamese: "thay đổi mọi thứ"
         },
         {
-            english: "Besides that, I believe that if you keep doing the same thing over and over again, you’ll probably keep getting the same results",
+            english: "Besides that, I believe that if you keep doing the same things over and over again, you’ll probably keep getting the same results.",
             translation: "keep getting",
             vietnamese: "tiếp tục nhận được"
         },
         {
-            english: "Of course, some people might argue that having a stable routine can help you build a stable life and improve your well-being",
+            english: "Of course, some people might argue that having a stable routine can help you build a more stable life and improve your overall well-being",
             translation: "might argue",
             vietnamese: "có thể tranh luận"
         },
@@ -31,22 +31,32 @@ export const FlexibleRoutine = {
             vietnamese: "có thể hiểu"
         },
         {
-            english: "But for me, life is really unpredictable. Unexpected things happen all the time",
+            english: "But for me, life is pretty unpredictable.",
             translation: "is unpredictable",
             vietnamese: "không thể đoán trước"
         },
         {
-            english: "I think having a simple routine helps you stay grounded and adapt to whatever life throws at you",
-            translation: "throws at you",
-            vietnamese: "ném vào bạn"
+            english: "Unexpected things happen all the time, so I think having a flexible routine gives you a good balance.",
+            translation: "gives you a good balance",
+            vietnamese: "mang lại cho bạn sự cân bằng tốt"
         },
         {
-            english: "Personally, I’m not really looking for a stable life, I think I prefer an adventurous one",
-            translation: "prefer",
-            vietnamese: "ưu tiên"
+            english: "It helps you stay grounded while still being able to adapt to whatever life throws at you.",
+            translation: "adapt to whatever life throws at you",
+            vietnamese: "thích nghi với bất cứ điều gì cuộc sống ném vào bạn"
         },
         {
-            english: "Maybe when I get older, I’ll change my mind — who knows",
+            english: "Personally, I’m not really looking for a completely stable life.",
+            translation: "not really looking for",
+            vietnamese: "không thực sự tìm kiếm"
+        },
+        {
+            english: "I think I would rather have an flexible one, with a bit of uncertainty and room for new experiences.",
+            translation: "rather have",
+            vietnamese: "thích hơn"
+        },
+        {
+            english: "Maybe I’ll change my mind when I get older — who knows?",
             translation: "change my mind",
             vietnamese: "thay đổi suy nghĩ"
         },
