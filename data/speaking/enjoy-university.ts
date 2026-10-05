@@ -6,54 +6,64 @@ export const EnjoyUniversity = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "What I enjoyed most about university was probably meeting a lot of new friends.",
+            english: "What I enjoyed most about university was probably meeting new people and making new friends.",
             translation: "was probably",
             vietnamese: "có lẽ là"
         },
         {
-            english: "I’m still keeping in contact with some of the friends I met back then",
-            translation: "keeping in contact",
+            english: "I’m still in touch with some of the friends I made back then",
+            translation: "in touch with",
             vietnamese: "giữ liên lạc"
         },
         {
-            english: "You know, after nearly 20 years, that kind of connection becomes something really special.",
-            translation: "becomes",
+            english: "and you know, after nearly 20 years, those kinds of connections become really special",
+            translation: "become",
             vietnamese: "trở nên"
         },
         {
-            english: "Honestly, it’s not something I can easily find in the corporate world",
+            english: "Honestly, that’s something I don’t think you can easily find in the corporate world.",
             translation: "can easily find",
             vietnamese: "có thể dễ dàng tìm thấy"
         },
         {
-            english: "I also really enjoyed doing assignments together with my friends",
-            translation: "doing assignments together",
-            vietnamese: "làm bài tập cùng nhau"
+            english: "I also really enjoyed working on assignments with my friends.",
+            translation: "working on assignments",
+            vietnamese: "làm bài tập"
         },
         {
-            english: "I remember there was one assignment ",
-            translation: "was one",
-            vietnamese: "có một"
+            english: "I remember one assignment",
+            translation: "remember",
+            vietnamese: "nhớ"
         },
         {
-            english: "where we had to create a short video to raise awareness about street pickpocketing in Ho Chi Minh City",
-            translation: "street pickpocketing",
+            english: "where we had to create a short video to raise awareness about pickpocketing on the streets of Ho Chi Minh City",
+            translation: "pickpocketing on the streets",
             vietnamese: "nạn móc túi trên đường phố"
         },
         {
-            english: "Even after all these years, I still clearly remember us acting in front of the camera like a bunch of amateur actors. It was honestly a lot of fun",
+            english: "Even after all these years, I can still clearly remember us acting in front of the camera like a bunch of amateur actors.",
             translation: "clearly remember",
             vietnamese: "nhớ rõ ràng"
         },
         {
-            english: "Back then, I was younger and had fewer responsibilities. I didn’t have too much pressure on my shoulders",
-            translation: "fewer responsibilities",
-            vietnamese: "ít trách nhiệm hơn"
+            english: "It was honestly a lot of fun.",
+            translation: "a lot of fun",
+            vietnamese: "rất vui"
         },
         {
-            english: "But time flies. You can’t stay stuck in the past forever. I guess life is really about moving forward",
+            english: "Back then, I was younger and had fewer responsibilities.",
+            translation: "had fewer responsibilities",
+            vietnamese: "có ít trách nhiệm hơn"
+        },
+        {
+            english: "But time flies, right? You can’t stay stuck in the past forever. ",
             translation: "stay stuck in the past",
             vietnamese: "bị mắc kẹt trong quá khứ"
+        },
+        {
+            english: "I guess life is really about moving forward while still appreciating the memories you’ve made along the way.",
+            translation: "moving forward while still appreciating the memories",
+            vietnamese: "tiến về phía trước trong khi vẫn trân trọng những kỷ niệm"
         },
     ]
 } satisfies Level;
