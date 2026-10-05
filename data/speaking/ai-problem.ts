@@ -6,44 +6,64 @@ export const AiProblem = {
     mode: 'flashcards',
     sentences: [
       {
-        english: "I’ve been using AI for quite a while now, and I can clearly see that it can massively improve productivity",
+        english: "I’ve been using AI for quite a while now, and I can definitely see how much it can improve productivity.",
         translation: "quite a while now",
         vietnamese: "một thời gian khá dài rồi",
       },
       {
-        english: "But at the same time, in some situations, it can also create problems if we rely on it too much",
-        translation: "can also create",
-        vietnamese: "cũng có thể tạo ra",
+        english: "But at the same time, I think there’s a downside if we rely on it too much. ",
+        translation: "downside",
+        vietnamese: "mặt trái",
       },
       {
-        english: "Personally, I mainly use AI to streamline tedious tasks that would normally take me hours to do myself, like implementing unit tests or writing test cases that cover different edge cases",
-        translation: "streamline tedious tasks",
-        vietnamese: "tinh giản các nhiệm vụ tẻ nhạt",
+        english: "Personally, I mainly use AI to take care of tedious tasks that would normally take me hours to do myself, like writing unit tests or creating test cases for different edge cases.",
+        translation: "take care of tedious tasks",
+        vietnamese: "giải quyết các nhiệm vụ tẻ nhạt",
       },
       {
-        english: "AI is really good at handling repetitive work like that, so it saves me a huge amount of time.",
+        english: "The reason is that AI is really good at handling repetitive work like that",
         translation: "handling repetitive work",
         vietnamese: "xử lý công việc lặp đi lặp lại",
       },
       {
-        english: "But on the other hand, I’ve also seen some teams rely too heavily on AI for almost everything",
+        english: "So instead of spending hours doing it manually, I can get it done much faster and focus on more important thing",
+        translation: "focus on more important thing",
+        vietnamese: "tập trung vào những việc quan trọng hơn",
+      },
+      {
+        english: "For example, if I’m working on a feature and need to write a lot of test cases, I can ask AI to generate an initial set of tests, including some edge cases I might not have thought of.",
+        translation: "generate an initial set of tests",
+        vietnamese: "tạo một bộ kiểm thử ban đầu",
+      },
+      {
+        english: "Then I review them and make sure they actually make sense.",
+        translation: "review them",
+        vietnamese: "xem lại chúng",
+      },
+      {
+        english: "That said, I’ve also seen teams rely too heavily on AI for almost everything",
         translation: "rely too heavily on AI",
         vietnamese: "dựa quá nhiều vào AI",
       },
       {
-        english: "Sometimes they reach a point where nobody on the team truly understands why the system behaves a certain way anymore",
-        translation: "reach a point",
-        vietnamese: "đạt đến một điểm",
+        english: "Sometimes, they get to a point where nobody on the team really understands why the system behaves the way it does anymore.",
+        translation: "why the system behaves the way it does anymore",
+        vietnamese: "tại sao hệ thống lại hoạt động như vậy nữa",
       },
       {
-        english: "When something breaks,debugging the issue can take days, because we don’t fully understand the logic behind the implementation",
-        translation: "debugging the issue",
-        vietnamese: "gỡ lỗi vấn đề",
+        english: "And when something breaks, debugging can take days because the team doesn’t fully understand the logic behind the implementation.",
+        translation: "behind the implementation",
+        vietnamese: "đằng sau việc triển khai",
       },
       {
-        english: "So overall, I think AI is an incredibly powerful tool, and we should absolutely use it — but we also need to use it carefully and make sure we still understand the systems we build",
-        translation: "use it carefully",
-        vietnamese: "sử dụng nó một cách cẩn thận",
+        english: "So overall, I think AI is an incredibly powerful tool, and we should absolutely use it.",
+        translation: "incredibly powerful tool",
+        vietnamese: "công cụ vô cùng mạnh mẽ",
+      },
+      {
+        english: "But we also need to use it responsibly and make sure we still understand the systems we’re building.",
+        translation: "use it responsibly",
+        vietnamese: "sử dụng nó một cách có trách nhiệm",
       },
     ]
 } satisfies Level;
