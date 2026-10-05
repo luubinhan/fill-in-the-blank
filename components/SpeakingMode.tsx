@@ -23,6 +23,7 @@ interface HiddenRange {
 interface QuestionState {
   sentence: string;
   hiddenWord: string;
+  vietnamese: string;
   range: HiddenRange | null;
   transcript: string;
   isCorrect: boolean | null;
@@ -96,6 +97,7 @@ function prepareQuestion(sentence: Sentence): QuestionState {
   return {
     sentence: sentence.english,
     hiddenWord: sentence.translation,
+    vietnamese: sentence.vietnamese ?? '',
     range: findHiddenRange(sentence.english, sentence.translation),
     transcript: '',
     isCorrect: null,
@@ -364,6 +366,10 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
               gameState.sentence.toLowerCase()
             )}
           </div>
+
+          {gameState.vietnamese && (
+            <p className="text-center bg-white/20 rounded-md px-2 py-1 text-blue-100 text-lg font-medium mb-8">{gameState.vietnamese}</p>
+          )}
 
           <div className="w-full max-w-sm flex flex-col items-center gap-4">
             {isListening && (

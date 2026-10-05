@@ -21,7 +21,7 @@ const ScreenHeader: React.FC<ScreenHeaderProps> = ({ onSpeakingClick, onHomeClic
     <div>
       <button
         onClick={onSpeakingClick}
-        className={`flex items-center gap-2 text-sm font-bold uppercase tracking-wider transition-colors ${
+        className={`flex items-center gap-2 text-sm font-bold cursor-pointer uppercase tracking-wider transition-colors ${
           view === 'speaking' ? 'text-violet-400' : 'text-zinc-400 hover:text-violet-400'
         }`}
       >
