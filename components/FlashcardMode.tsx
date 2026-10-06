@@ -185,7 +185,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ data, levelName, onExit, 
 
             <button 
               onClick={handleNext}
-              className="flex-1 py-4 rounded-2xl bg-indigo-600 shadow-lg shadow-indigo-900/30 flex items-center justify-center text-white hover:bg-indigo-500 transition-all"
+              className="cursor-pointer flex-1 py-4 rounded-2xl bg-indigo-600 shadow-lg shadow-indigo-900/30 flex items-center justify-center text-white hover:bg-indigo-500 transition-all"
               title="Next Card (Right Arrow)"
             >
                 <span className="mr-2 font-bold uppercase tracking-wider text-sm">
