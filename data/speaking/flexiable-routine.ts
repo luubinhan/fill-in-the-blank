@@ -37,13 +37,13 @@ export const FlexibleRoutine = {
         },
         {
             english: "Unexpected things happen all the time, so I think having a flexible routine gives you a good balance.",
-            translation: "gives you a good balance",
-            vietnamese: "mang lại cho bạn sự cân bằng tốt"
+            translation: "gives",
+            vietnamese: "mang lại"
         },
         {
             english: "It helps you stay grounded while still being able to adapt to whatever life throws at you.",
-            translation: "adapt to whatever life throws at you",
-            vietnamese: "thích nghi với bất cứ điều gì cuộc sống ném vào bạn"
+            translation: "whatever life throws at you",
+            vietnamese: "bất cứ điều gì cuộc sống ném vào bạn"
         },
         {
             english: "Personally, I’m not really looking for a completely stable life.",

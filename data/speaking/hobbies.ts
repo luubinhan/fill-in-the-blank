@@ -17,48 +17,48 @@ export const Hobbies = {
         },
         {
             english: "For me, I try not to let work define who I am",
-            translation: "define who I am",
-            vietnamese: "xác định con người tôi là ai"
+            translation: "define",
+            vietnamese: "xác định"
         },
         {
             english: "I have quite a few interests outside of work that I genuinely enjoy, like photography, running, and traveling",
-            translation: "interests outside of work",
-            vietnamese: "sở thích ngoài công việc"
+            translation: "interests",
+            vietnamese: "sở thích"
         },
         {
             english: "I feel like those things say a lot about who I am and the kind of person I want to become",
-            translation: "say a lot about who I am",
-            vietnamese: "nói lên nhiều về con người tôi"
+            translation: "say",
+            vietnamese: "nói lên"
         },
         {
             english: "They also make my life feel more meaningful.",
-            translation: "make my life feel more meaningful",
-            vietnamese: "làm cho cuộc sống của tôi trở nên ý nghĩa hơn"
+            translation: "make my life",
+            vietnamese: "làm cho cuộc sống"
         },
         {
             english: "At the same time, having hobbies helps me maintain a better work-life balance",
-            translation: "maintain a better work-life balance",
-            vietnamese: "duy trì cân bằng giữa công việc và cuộc sống"
+            translation: "maintain",
+            vietnamese: "duy trì"
         },
         {
             english: "When you have something you enjoy outside of work, it’s easier to switch off and not think about work all the time.",
-            translation: "switch off and not think about work all the time",
-            vietnamese: "tắt công việc và không nghĩ về công việc suốt thời gian"
+            translation: "switch off",
+            vietnamese: "tắt"
         },
         {
             english: "For example, I like running in the morning. It helps me relieve stress and puts me in a better mood",
-            translation: "relieve stress and puts me in a better mood",
-            vietnamese: "giải tỏa căng thẳng và giúp tôi có tâm trạng tốt hơn"
+            translation: "relieve stress",
+            vietnamese: "giải tỏa căng thẳng"
         },
         {
             english: "so I usually feel more focused and productive during the day.",
-            translation: "feel more focused and productive during the day",
-            vietnamese: "cảm thấy tập trung và năng suất hơn trong suốt cả ngày"
+            translation: "feel more focused",
+            vietnamese: "cảm thấy tập trung"
         },
         {
             english: "I think life would get pretty boring if work was all you had.",
-            translation: "life would get pretty boring if work was all you had",
-            vietnamese: "cuộc sống sẽ trở nên khá nhàm chán nếu công việc là tất cả những gì bạn có"
+            translation: "life would get",
+            vietnamese: "cuộc sống sẽ trở nên",
         },
     ]
 } satisfies Level;

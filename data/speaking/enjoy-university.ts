@@ -57,13 +57,13 @@ export const EnjoyUniversity = {
         },
         {
             english: "But time flies, right? You can’t stay stuck in the past forever. ",
-            translation: "stay stuck in the past",
-            vietnamese: "bị mắc kẹt trong quá khứ"
+            translation: "stay stuck",
+            vietnamese: "bị mắc kẹt"
         },
         {
             english: "I guess life is really about moving forward while still appreciating the memories you’ve made along the way.",
-            translation: "moving forward while still appreciating the memories",
-            vietnamese: "tiến về phía trước trong khi vẫn trân trọng những kỷ niệm"
+            translation: " appreciating the memories",
+            vietnamese: "trân trọng những kỷ niệm"
         },
     ]
 } satisfies Level;

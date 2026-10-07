@@ -12,7 +12,7 @@ export const AllowRemoteWork = {
       },
       {
         english: "Of course, I understand that there are certain jobs that require employees to work on-site.",
-        translation: "there are certain jobs",
+        translation: "certain jobs",
         vietnamese: "có một số công việc nhất định"
       },
       {
@@ -32,8 +32,8 @@ export const AllowRemoteWork = {
       },
       {
         english: "In fact, according to several articles I’ve read, studies have shown that employee productivity did not decrease after remote work was introduced. It actually increased",
-        translation: "employee productivity did not decrease",
-        vietnamese: "năng suất của nhân viên không giảm"
+        translation: "employee productivity",
+        vietnamese: "năng suất của nhân viên"
       },
       {
         english: "Overall, I’m a strong supporter of the work-from-home model, as long as employees can maintain their performance and deliver good results",
