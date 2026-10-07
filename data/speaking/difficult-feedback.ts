@@ -7,7 +7,7 @@ export const DifficultFeedback = {
     sentences: [
       {
         english: "One piece of feedback I got from my manager a few months ago was that I could be a bit too aggressive during discussions with my coworkers.",
-        translation: "could be too aggressive",
+        translation: "a bit too aggressive",
         vietnamese: "có thể quá quyết liệt"
       },
       {
