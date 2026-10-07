@@ -12,8 +12,8 @@ export const LearnMost = {
         },
         {
             english: "One thing I’ve really learned from him is how he handles critical issues, especially when things get stressful.",
-            translation: "handles critical issues",
-            vietnamese: "xử lý các vấn đề quan trọng"
+            translation: "handles",
+            vietnamese: "xử lý"
         },
         {
             english: "He stays calm, focuses on the problem, and helps the team move forward instead of putting pressure on people.",
@@ -47,8 +47,8 @@ export const LearnMost = {
         },
         {
             english: "It showed me that being a good leader isn’t just about making quick decisions",
-            translation: "isn’t just about making quick decisions",
-            vietnamese: "không chỉ là đưa ra các quyết định nhanh chóng"
+            translation: "making quick decisions",
+            vietnamese: "đưa ra các quyết định nhanh chóng"
         },
         {
             english: "It’s also about staying calm, trusting your team, and helping them do their best work.",

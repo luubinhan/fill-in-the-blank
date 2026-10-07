@@ -12,8 +12,8 @@ export const HomeRecharge = {
         },
         {
             english: "Even just a few minutes with my daughter after work really helps me relieve stress and feel re-energized",
-            translation: "relieve stress and feel re-energized",
-            vietnamese: "giải tỏa căng thẳng và cảm thấy tràn đầy năng lượng"
+            translation: "relieve stress",
+            vietnamese: "giải tỏa căng thẳng"
         },
         {
             english: "Home is where I find my peace because I can disconnect from all the distractions and stress from work",
