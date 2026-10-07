@@ -27,8 +27,8 @@ export const WorkingInTheOffice = {
       },
       {
         english: "Another point is that working in the office helps people build stronger relationships with their teammates.",
-        translation: "stronger relationships with their teammates",
-        vietnamese: "mối quan hệ mạnh mẽ hơn với các đồng đội của họ"
+        translation: "stronger relationships",
+        vietnamese: "mối quan hệ mạnh mẽ hơn"
       },
       {
         english: "When you work remotely, conversations tend to be more focused on work.",
@@ -37,13 +37,13 @@ export const WorkingInTheOffice = {
       },
       {
         english: "But when you’re in the office, you can talk about your weekend, chat about a football match, or even play a quick game together during a break",
-        translation: "talk about your weekend",
-        vietnamese: "nói về cuối tuần của bạn"
+        translation: "talk about",
+        vietnamese: "nói về"
       },
       {
         english: "These small interactions help people get to know each other better, which can lead to better teamwork and collaboration.",
-        translation: "get to know each other better",
-        vietnamese: "hiểu nhau hơn"
+        translation: "get to know each other",
+        vietnamese: "hiểu nhau"
       },
       {
         english: "That being said, working from home definitely has its advantages too. ",
@@ -57,8 +57,8 @@ export const WorkingInTheOffice = {
       },
       {
         english: "As a result, they may feel less stressed and be more productive.",
-        translation: "less stressed and more productive",
-        vietnamese: "bớt căng thẳng và làm việc hiệu quả hơn"
+        translation: "more productive",
+        vietnamese: "làm việc hiệu quả hơn"
       },
       {
         english: "Fortunately, our company has a hybrid working model, so we can get the best of both worlds.",

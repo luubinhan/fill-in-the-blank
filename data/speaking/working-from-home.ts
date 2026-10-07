@@ -17,8 +17,8 @@ export const WorkingFromHome = {
       },
       {
         english: "In fact, working from home saves me around two hours of commuting every day",
-        translation: "saves me around two hours of commuting",
-        vietnamese: "tiết kiệm khoảng hai giờ đi lại"
+        translation: "saves me around",
+        vietnamese: "tiết kiệm khoảng"
       },
       {
         english: "As a result, I feel less stressed and am more productive.",

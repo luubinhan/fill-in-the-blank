@@ -22,18 +22,18 @@ export const SpendWeekends = {
       },
       {
         english: "Your family is usually there for you through both good times and difficult times, so I think it’s worth making time for them.",
-        translation: "through both good times and difficult times",
-        vietnamese: "trải qua cả những thời điểm tốt và những thời điểm khó khăn"
+        translation: "through",
+        vietnamese: "trải qua"
       },
       {
         english: "For example, on weekends, I usually spend time with my wife and daughter. We might go out for lunch, play some games together, or just stay at home and relax.",
-        translation: "stay at home and relax",
-        vietnamese: "ở nhà và thư giãn"
+        translation: "stay",
+        vietnamese: "ở"
       },
       {
         english: "It may sound simple, but I really enjoy those little moments together.",
-        translation: "little moments together",
-        vietnamese: "những khoảnh khắc nhỏ bên nhau"
+        translation: "little moments",
+        vietnamese: "những khoảnh khắc nhỏ"
       },
       {
         english: "Another reason is that spending time together helps us stay close.",
