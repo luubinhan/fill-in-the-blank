@@ -12,13 +12,13 @@ export const DifficultFeedback = {
       },
       {
         english: "I think the main reason was that I sometimes got too focused on proving that my idea was right, especially when I strongly disagreed with someone.",
-        translation: "got too focused on proving that my idea was right",
-        vietnamese: "quá tập trung vào việc chứng minh rằng ý tưởng của tôi là đúng"
+        translation: "got too focused",
+        vietnamese: "quá tập trung"
       },
       {
         english: "My manager reminded me that even when I disagree, I still need to stay calm and professional because my attitude can affect the whole team.",
-        translation: "stay calm and professional",
-        vietnamese: "giữ bình tĩnh và chuyên nghiệp"
+        translation: "stay calm",
+        vietnamese: "giữ bình tĩnh"
       },
       {
         english: "For example, I once had a pretty heated argument with someone from the QA team.",
@@ -37,33 +37,33 @@ export const DifficultFeedback = {
       },
       {
         english: "so I felt that a feature toggle was unnecessary",
-        translation: "feature toggle was unnecessary",
-        vietnamese: "công tắc tính năng là không cần thiết"
+        translation: "feature toggle",
+        vietnamese: "công tắc tính năng"
       },
       {
         english: "I was worried that it would just create more operational overhead later on.",
-        translation: "create more operational overhead",
-        vietnamese: "tạo thêm gánh nặng vận hành"
+        translation: "operational overhead",
+        vietnamese: "gánh nặng vận hành"
       },
       {
         english: "At the time, I got frustrated and ended up saying something like, “Fine, I’ll do it, but not because I think you’re right. I’m only doing it to make you happy.”",
-        translation: "got frustrated and ended up saying something like",
-        vietnamese: "bị thất vọng và cuối cùng đã nói điều gì đó như"
+        translation: "got frustrated",
+        vietnamese: "bị thất vọng"
       },
       {
         english: "Eventually, my manager heard about the argument, and we had a one-on-one about it.",
-        translation: "one-on-one about it",
-        vietnamese: "một cuộc họp riêng về vấn đề đó"
+        translation: "argument",
+        vietnamese: "cuộc tranh cãi"
       },
       {
         english: "Looking back, I think the biggest lesson for me was that just because I believe my idea is right, it doesn’t automatically mean the other person’s idea is wrong.",
-        translation: "just because I believe my idea is right",
-        vietnamese: "chỉ vì tôi tin rằng ý tưởng của mình là đúng"
+        translation: "my idea is right",
+        vietnamese: "ý tưởng của mình là đúng"
       },
       {
         english: "People have different priorities and perspectives",
-        translation: "different priorities and perspectives",
-        vietnamese: "các ưu tiên và quan điểm khác nhau"
+        translation: "different priorities",
+        vietnamese: "các ưu tiên"
       },
       {
         english: "and I’ve been trying to get better at understanding where other people are coming from before reacting emotionally",
