@@ -27,8 +27,8 @@ export const AiProblem = {
       },
       {
         english: "So instead of spending hours doing it manually, I can get it done much faster and focus on more important thing",
-        translation: "focus on more important thing",
-        vietnamese: "tập trung vào những việc quan trọng hơn",
+        translation: "focus on",
+        vietnamese: "tập trung vào",
       },
       {
         english: "For example, if I’m working on a feature and need to write a lot of test cases, I can ask AI to generate an initial set of tests, including some edge cases I might not have thought of.",
@@ -47,8 +47,8 @@ export const AiProblem = {
       },
       {
         english: "Sometimes, they get to a point where nobody on the team really understands why the system behaves the way it does anymore.",
-        translation: "why the system behaves the way it does anymore",
-        vietnamese: "tại sao hệ thống lại hoạt động như vậy nữa",
+        translation: "the way it does anymore",
+        vietnamese: "lại hoạt động như vậy nữa",
       },
       {
         english: "And when something breaks, debugging can take days because the team doesn’t fully understand the logic behind the implementation.",

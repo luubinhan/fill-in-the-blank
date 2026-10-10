@@ -83,7 +83,7 @@ const SpeakingView: React.FC<SpeakingViewProps> = ({ onSelectLevel, levelSelecti
               className="cursor-pointer bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 p-3 rounded-xl transition-all flex flex-col items-center gap-2"
             >
               <PenTool size={20} className="text-emerald-400" />
-              <span className="text-xs font-bold text-emerald-400">Quiz Mode</span>
+              <span className="text-xs font-bold text-emerald-400">Quiz</span>
             </button>
 
             <button
