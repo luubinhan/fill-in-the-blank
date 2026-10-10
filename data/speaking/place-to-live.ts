@@ -56,11 +56,6 @@ export const PlaceToLive = {
             vietnamese: "chăm sóc sức khỏe đáng tin cậy"
         },
         {
-            english: "And as you get older, having reliable healthcare nearby becomes even more important.",
-            translation: "reliable healthcare",
-            vietnamese: "chăm sóc sức khỏe đáng tin cậy"
-        },
-        {
             english: "Overall, these would be my top priorities when choosing a place to live.",
             translation: "top priorities",
             vietnamese: "ưu tiên hàng đầu"
