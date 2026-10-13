@@ -7,13 +7,13 @@ export const Family = {
     sentences: [
         {
             english: "I really believe that family should always come first.",
-            translation: "strongly",
-            vietnamese: "rất"
+            translation: "really believe",
+            vietnamese: "rất tin rằng"
         },
         {
             english: "It goes without saying that they’re the most important people in our lives.",
-            translation: "undoubtedly",
-            vietnamese: "chắc chắn"
+            translation: "goes without saying",
+            vietnamese: "rõ ràng là"
         },
         {
             english: "and they’re always there for us when things get tough",
