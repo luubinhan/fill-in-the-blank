@@ -11,19 +11,20 @@ export const Tourism = {
         vietnamese: "kinh tế"
       },
       {
-        english: "Cities like Da Nang have grown really fast because of tourists.",
-        translation: "have grown",
-        vietnamese: "phát triển"
+        english: "so many local people can earn more income",
+        translation: "earn",
+        vietnamese: "kiếm được"
       },
+
       {
         english: "It creates a lot of jobs, from hotel staff to street food vendors.",
         translation: "street food vendors",
         vietnamese: "người bán đồ ăn đường phố"
       },
       {
-        english: "so many local people can earn more income",
-        translation: "earn",
-        vietnamese: "kiếm được"
+        english: "Cities like Da Nang have grown really fast because of tourists.",
+        translation: "have grown",
+        vietnamese: "phát triển"
       },
       {
         english: "But on the downside, Popular places can become too crowded.",
