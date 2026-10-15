@@ -56,11 +56,6 @@ export const ProudProject = {
             vietnamese: "vương quốc động vật"
         },
         {
-            english: "After a while, it starts to feel like she’s building her own little animal kingdom.",
-            translation: "animal kingdom",
-            vietnamese: "vương quốc động vật"
-        },
-        {
             english: "It’s just a side project that I work on at the weekend, but honestly, I’ve been having a lot of fun with it.",
             translation: "side project",
             vietnamese: "dự án phụ"
