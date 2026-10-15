@@ -6,59 +6,54 @@ export const FlexibleRoutine = {
     mode: 'flashcards',
     sentences: [
         {
-            english: "Personally, I would rather have a flexible routine than a fixed one.",
-            translation: "would rather have",
-            vietnamese: "thích hơn"
+            english: "I would say I prefer a flexible routine.",
+            translation: "I would say",
+            vietnamese: "Tôi muốn nói rằng"
         },
         {
-            english: "I guess it’s because I’m quite open-minded, and I like having the freedom to change things up depending on the situation.",
-            translation: "change things up",
-            vietnamese: "thay đổi mọi thứ"
+            english: "For example, I’m not really a fan of having a strict schedule",
+            translation: "not really a fan of",
+            vietnamese: "không thực sự thích"
         },
         {
-            english: "Besides that, I believe that if you keep doing the same things over and over again, you’ll probably keep getting the same results.",
-            translation: "keep getting",
-            vietnamese: "tiếp tục nhận được"
+            english: "Working a fixed 9-to-5 job is not really my thing",
+            translation: "not really my thing",
+            vietnamese: "không thực sự phù hợp với tôi"
         },
         {
-            english: "Of course, some people might argue that having a stable routine can help you build a more stable life and improve your overall well-being",
-            translation: "might argue",
-            vietnamese: "có thể tranh luận"
+            english: "because I feel like I would be surviving rather than actually living.",
+            translation: "would be surviving",
+            vietnamese: "sẽ chỉ đang tồn tại"
         },
         {
-            english: "And honestly, I can understand that point of view",
-            translation: "can understand",
-            vietnamese: "có thể hiểu"
+            english: "Another reason is that life can be unpredictable, and having a flexible routine makes it easier for me to adapt when things don't go as planned.",
+            translation: "don't go as planned",
+            vietnamese: "diễn ra như kế hoạch"
         },
         {
-            english: "But for me, life is pretty unpredictable.",
-            translation: "is unpredictable",
-            vietnamese: "không thể đoán trước"
+            english: "Plus, as a father, my schedule changes quite a bit, so having some flexibility helps me feel less stressed and maintain a healthy work-life balance.",
+            translation: "quite a bit",
+            vietnamese: "khá nhiều"
         },
         {
-            english: "Unexpected things happen all the time, so I think having a flexible routine gives you a good balance.",
-            translation: "gives",
-            vietnamese: "mang lại"
+            english: "so having some flexibility helps me feel less stressed and maintain a healthy work-life balance.",
+            translation: "flexibility",
+            vietnamese: "sự linh hoạt"
         },
         {
-            english: "It helps you stay grounded while still being able to adapt to whatever life throws at you.",
-            translation: "whatever life throws at you",
-            vietnamese: "bất cứ điều gì cuộc sống ném vào bạn"
+            english: "That being said, I can see why some people prefer having a fixed routine.",
+            translation: "That being said",
+            vietnamese: "nói như vậy"
         },
         {
-            english: "Personally, I’m not really looking for a completely stable life.",
-            translation: "not really looking for",
-            vietnamese: "không thực sự tìm kiếm"
+            english: "It helps them stay organized, manage their time better, and focus on their tasks.",
+            translation: "stay organized",
+            vietnamese: "giữ cho có tổ chức"
         },
         {
-            english: "I think I would rather have an flexible one, with a bit of uncertainty and room for new experiences.",
-            translation: "rather have",
-            vietnamese: "thích hơn"
-        },
-        {
-            english: "Maybe I’ll change my mind when I get older — who knows?",
-            translation: "change my mind",
-            vietnamese: "thay đổi suy nghĩ"
+            english: "But personally, I would still prefer to have a flexible schedule because it gives me more freedom to balance my work and family life.",
+            translation: "would still prefer",
+            vietnamese: "vẫn thích"
         },
     ]
 } satisfies Level;
