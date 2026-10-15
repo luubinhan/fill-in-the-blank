@@ -11,24 +11,29 @@ export const Introduce = {
             vietnamese: "tại nơi làm việc"
         },
         {
-            english: "I’m 38, and I’m a father to a six-year-old daughter. I currently work as a software developer on the MessageMedia team, which I joined back in 2019.",
-            translation: "back in",
-            vietnamese: "vào năm"
+            english: "I’m 38, and I’m a father to a six-year-old daughter. I currently work as a front-end developer on the MessageMedia team",
+            translation: "on",
+            vietnamese: "trên"
         },
         {
-            english: "I was born in Óc Eo, a quiet little town in An Giang Province. It’s a pretty peaceful place, with small, cozy houses surrounded by mountains and rice fields.",
+            english: "I am originally from Óc Eo, a quiet little town in An Giang Province. It’s a pretty peaceful place, with small, cozy houses surrounded by mountains and rice fields.",
             translation: "surrounded by",
             vietnamese: "bị bao quanh bởi"
         },
         {
-            english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University, and I’ve been working as a developer ever since I graduated.",
+            english: "About 20 years ago, I moved to Ho Chi Minh City to study Computer Science at Hoa Sen University,",
             translation: "moved to",
             vietnamese: "chuyển đến"
         },
         {
+            english: "and I have been working as a developer ever since I graduated.",
+            translation: "have been working",
+            vietnamese: "tôi đã làm việc"
+        },
+        {
             english: "My daily routine is pretty simple. I usually wake up around 6 AM",
-            translation: "daily routine",
-            vietnamese: "thói quen hàng ngày"
+            translation: "wake up",
+            vietnamese: "thức dậy"
         },
         {
             english: "go for a 30-minute run, and then drop my daughter off at school before heading to the office.",
@@ -51,8 +56,8 @@ export const Introduce = {
             vietnamese: "ưu tiên hàng đầu"
         },
         {
-            english: "Another thing that’s become more important to me as I’ve gotten older is minimalism.",
-            translation: "as I’ve gotten older",
+            english: "Another thing that’s become more important to me as I have gotten older is minimalism.",
+            translation: "have gotten older",
             vietnamese: "khi tôi già đi"
         },
         {
