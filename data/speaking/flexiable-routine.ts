@@ -31,7 +31,7 @@ export const FlexibleRoutine = {
             vietnamese: "diễn ra như kế hoạch"
         },
         {
-            english: "Plus, as a father, my schedule changes quite a bit, so having some flexibility helps me feel less stressed and maintain a healthy work-life balance.",
+            english: "Plus, as a father, my schedule changes quite a bit",
             translation: "quite a bit",
             vietnamese: "khá nhiều"
         },
