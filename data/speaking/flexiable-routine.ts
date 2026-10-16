@@ -11,12 +11,12 @@ export const FlexibleRoutine = {
             vietnamese: "Tôi muốn nói rằng"
         },
         {
-            english: "For example, I’m not really a fan of having a strict schedule",
+            english: "I’m not really a fan of having a strict schedule",
             translation: "not really a fan of",
             vietnamese: "không thực sự thích"
         },
         {
-            english: "Working a fixed 9-to-5 job is not really my thing",
+            english: "For example, Working a fixed 9-to-5 job is not really my thing",
             translation: "not really my thing",
             vietnamese: "không thực sự phù hợp với tôi"
         },
