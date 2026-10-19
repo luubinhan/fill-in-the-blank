@@ -16,6 +16,7 @@ import { ConditionalStatements } from './if-condition';
 import { Tired } from './tired';
 import { SpeakingFramework } from './speaking-framework';
 import { DavinciResolve } from './davinci-resolve';
+import { Idioms } from './idioms';
 
 export const LEVELS: Level[] = [
   SpeakingFramework,
@@ -35,4 +36,5 @@ export const LEVELS: Level[] = [
   ConditionalStatements,
   Get,
   DavinciResolve,
+  Idioms,
 ];
