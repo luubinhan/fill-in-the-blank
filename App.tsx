@@ -16,7 +16,7 @@ import {
   normalizeLevelCounterKey,
 } from './utils/levelSelectionCounterDb';
 
-import { SPEAKING_LEVELS } from './data/speaking-tourism';
+import { SPEAKING_LEVELS } from './data/speaking';
 
 const ALL_LEVELS = [...LEVELS, ...SPEAKING_LEVELS];
 

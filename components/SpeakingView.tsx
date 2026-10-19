@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Level, GameMode, LevelSelectionCounters } from '../types';
-import { SPEAKING_LEVELS } from '../data/speaking-tourism';
+import { SPEAKING_LEVELS } from '../data/speaking';
 import { Layers, Mic, PenTool } from 'lucide-react';
 import { normalizeLevelCounterKey } from '../utils/levelSelectionCounterDb';
 
