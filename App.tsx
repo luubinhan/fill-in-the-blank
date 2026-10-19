@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { LEVELS } from './data/constants';
+import { LEVELS } from './data';
 import { GameMode, ViewState, Level, LevelSelectionCounters } from './types';
 import FlashcardMode from './components/FlashcardMode';
 import SpeakingFlashcardMode from './components/SpeakingFlashcardMode';
