@@ -22,7 +22,7 @@ export const WorkingFromHome = {
       },
       {
         english: "As a result, I feel less stressed and am more productive.",
-        translation: "be more productive",
+        translation: "more productive",
         vietnamese: "làm việc hiệu quả hơn"
       },
       {
