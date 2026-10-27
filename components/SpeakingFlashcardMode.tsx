@@ -170,7 +170,7 @@ const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({
                           )}
                         </div>
 
-                        <div className="text-xs text-zinc-500 uppercase tracking-widest flex items-center gap-2">
+                        <div className="cursor-pointer text-xs text-zinc-500 uppercase tracking-widest flex items-center gap-2">
                           <RotateCw size={12} /> Tap to flip back
                         </div>
                       </div>
@@ -188,7 +188,7 @@ const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({
             <button 
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="flex-1 py-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-800 transition-all"
+              className="cursor-pointer flex-1 py-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-800 transition-all"
               title="Previous Card (Left Arrow)"
             >
                 <ChevronLeft className="w-6 h-6" />
@@ -203,7 +203,7 @@ const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({
 
             <button 
               onClick={handleNext}
-              className="flex-1 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 border border-indigo-600 flex items-center justify-center text-white font-bold uppercase tracking-wider transition-all"
+              className="flex-1 py-4 cursor-pointer rounded-2xl bg-indigo-600 hover:bg-indigo-500 border border-indigo-600 flex items-center justify-center text-white font-bold uppercase tracking-wider transition-all"
               title="Next Card (Right Arrow)"
             >
                 <span className="mr-2">
