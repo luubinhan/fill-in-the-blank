@@ -66,7 +66,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
         <div className=" space-y-4">
           <button 
             onClick={onRestart}
-            className={`w-full py-4 bg-zinc-900 hover:bg-zinc-800 text-white rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2`}
+            className={`cursor-pointer w-full py-4 bg-zinc-900 hover:bg-zinc-800 text-white rounded-2xl font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2`}
           >
             <RefreshCcw size={18} /> {isQuizMode ? 'Try Again' : 'Review Again'}
           </button>
@@ -74,7 +74,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
           {onNextGame && (
             <button 
               onClick={onNextGame}
-              className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-indigo-500 transition-all flex items-center justify-center gap-2"
+              className="cursor-pointer w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-indigo-500 transition-all flex items-center justify-center gap-2"
             >
               <ArrowRight size={18} /> Next
             </button>
@@ -83,7 +83,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
           {onAnotherLevel && (
             <button 
               onClick={onAnotherLevel}
-              className="w-full py-4 bg-amber-400 border border-amber-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-amber-600 transition-all flex items-center justify-center gap-2"
+              className="cursor-pointerw-full py-4 bg-amber-400 border border-amber-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-amber-600 transition-all flex items-center justify-center gap-2"
             >
               <Shuffle size={18} /> Another topic
             </button>
@@ -91,7 +91,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
           
           <button 
             onClick={onExit}
-            className="w-full py-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-zinc-400 font-bold tracking-wider uppercase hover:text-white hover:bg-zinc-800 transition-all"
+            className="cursor-pointer w-full py-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-zinc-400 font-bold tracking-wider uppercase hover:text-white hover:bg-zinc-800 transition-all"
           >
             Back to Home
           </button>
