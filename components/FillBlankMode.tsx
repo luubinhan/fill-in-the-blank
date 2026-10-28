@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Sentence } from '../types';
+import { GameMode, Sentence } from '../types';
 import { Check, X, ArrowRight } from 'lucide-react';
 import GameHeader from './shared/GameHeader';
 import CompletionScreen, { IncorrectItem } from './shared/CompletionScreen';
@@ -12,6 +12,7 @@ interface FillBlankModeProps {
   onExit: () => void;
   onNextGame: () => void;
   onAnotherLevel?: () => void;
+  onSelectMode?: (mode: GameMode) => void;
 }
 
 interface QuestionState {
@@ -25,7 +26,7 @@ interface QuestionState {
   vietnamese: string;
 }
 
-const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, onNextGame, onAnotherLevel }) => {
+const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, onNextGame, onAnotherLevel, onSelectMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gameState, setGameState] = useState<QuestionState | null>(null);
   const [score, setScore] = useState(0);
@@ -103,6 +104,7 @@ const FillBlankMode: React.FC<FillBlankModeProps> = ({ data, levelName, onExit, 
         onAnotherLevel={onAnotherLevel}
         mode="quiz"
         incorrectItems={incorrectItems}
+        onSelectMode={onSelectMode}
       />
     );
   }

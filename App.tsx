@@ -129,7 +129,7 @@ function App() {
 
     setSelectedLevel(level);
     setGameMode(mode);
-    setGameKey(0);
+    setGameKey((prev) => prev + 1);
     setSourceView(source);
     setView('game');
     const searchParams = new URLSearchParams({
@@ -253,11 +253,15 @@ function App() {
     const gameData = sourceView === 'speaking'
       ? selectedLevel.sentences
       : prepareGameData(selectedLevel.sentences);
+    const modeSelectionProps = sourceView === 'speaking'
+      ? { onSelectMode: (mode: GameMode) => handleLevelAndModeSelect(selectedLevel, mode, 'speaking') }
+      : {};
 
     if (gameMode === 'flashcards') {
       if (sourceView === 'speaking') {
         return (
           <SpeakingFlashcardMode 
+            {...modeSelectionProps}
             key={gameKey}
             data={gameData} 
             levelName={selectedLevel.name}
@@ -283,6 +287,7 @@ function App() {
     if (gameMode === 'speaking') {
       return (
         <SpeakingMode
+          {...modeSelectionProps}
           key={gameKey}
           data={selectedLevel.sentences}
           levelName={selectedLevel.name}
@@ -296,6 +301,7 @@ function App() {
     if (gameMode === 'fill-blank' && selectedLevel.mode === 'vocabulary') {
       return (
         <VocabularyMode 
+          {...modeSelectionProps}
           key={gameKey}
           data={gameData} 
           levelName={selectedLevel.name}
@@ -308,6 +314,7 @@ function App() {
     
     return (
       <FillBlankMode 
+        {...modeSelectionProps}
         key={gameKey}
         data={gameData} 
         levelName={selectedLevel.name}

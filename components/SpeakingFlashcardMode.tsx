@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Sentence } from '../types';
+import { GameMode, Sentence } from '../types';
 import { RotateCw, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import GameHeader from './shared/GameHeader';
 import CompletionScreen from './shared/CompletionScreen';
@@ -15,6 +15,7 @@ interface SpeakingFlashcardModeProps {
   onExit: () => void;
   onNextGame: () => void;
   onAnotherLevel?: () => void;
+  onSelectMode?: (mode: GameMode) => void;
 }
 
 const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({ 
@@ -22,7 +23,8 @@ const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({
   levelName, 
   onExit, 
   onNextGame, 
-  onAnotherLevel 
+  onAnotherLevel,
+  onSelectMode,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [completed, setCompleted] = useState(false);
@@ -89,6 +91,7 @@ const SpeakingFlashcardMode: React.FC<SpeakingFlashcardModeProps> = ({
         mode="flashcards"
         onNextGame={onNextGame}
         onAnotherLevel={onAnotherLevel}
+        onSelectMode={onSelectMode}
       />
     );
   }

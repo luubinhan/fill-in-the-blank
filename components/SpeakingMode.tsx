@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowRight, Check, Eye, EyeOff, Mic, X } from 'lucide-react';
-import { Sentence } from '../types';
+import { GameMode, Sentence } from '../types';
 import GameHeader from './shared/GameHeader';
 import CompletionScreen, { IncorrectItem } from './shared/CompletionScreen';
 import LoadingLottie from './shared/LoadingLottie';
@@ -13,6 +13,7 @@ interface SpeakingModeProps {
   onExit: () => void;
   onNextGame: () => void;
   onAnotherLevel?: () => void;
+  onSelectMode?: (mode: GameMode) => void;
 }
 
 interface HiddenRange {
@@ -119,7 +120,7 @@ function recognitionErrorMessage(error: string): string {
   return 'Speech recognition failed. Try again.';
 }
 
-const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, onNextGame, onAnotherLevel }) => {
+const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, onNextGame, onAnotherLevel, onSelectMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gameState, setGameState] = useState<QuestionState | null>(null);
   const [score, setScore] = useState(0);
@@ -324,6 +325,7 @@ const SpeakingMode: React.FC<SpeakingModeProps> = ({ data, levelName, onExit, on
         onAnotherLevel={onAnotherLevel}
         mode="quiz"
         incorrectItems={incorrectItems}
+        onSelectMode={onSelectMode}
       />
     );
   }
