@@ -86,7 +86,7 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({
           {onAnotherLevel && (
             <button 
               onClick={onAnotherLevel}
-              className="cursor-pointerw-full py-4 bg-amber-400 border border-amber-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-amber-600 transition-all flex items-center justify-center gap-2"
+              className="cursor-pointer w-full py-4 bg-amber-400 border border-amber-600 text-white rounded-2xl font-bold tracking-wider uppercase hover:bg-amber-600 transition-all flex items-center justify-center gap-2"
             >
               <Shuffle size={18} /> Another topic
             </button>
