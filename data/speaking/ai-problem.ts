@@ -7,7 +7,7 @@ export const AiProblem = {
     sentences: [
       {
         english: "I’ve been using AI for quite a while now, and I can definitely see how much it can improve productivity.",
-        translation: "quite a while now",
+        translation: "quite a while",
         vietnamese: "một thời gian khá dài rồi",
       },
       {
@@ -17,7 +17,7 @@ export const AiProblem = {
       },
       {
         english: "Personally, I mainly use AI to take care of tedious tasks that would normally take me hours to do myself, like writing unit tests or creating test cases for different edge cases.",
-        translation: "take care of tedious tasks",
+        translation: "take care of tedious",
         vietnamese: "giải quyết các nhiệm vụ tẻ nhạt",
       },
       {
@@ -31,8 +31,8 @@ export const AiProblem = {
         vietnamese: "tập trung vào",
       },
       {
-        english: "For example, if I’m working on a feature and need to write a lot of test cases, I can ask AI to generate an initial set of tests, including some edge cases I might not have thought of.",
-        translation: "generate an initial set of tests",
+        english: "For example, if I’m working on a feature and need to write a lot of test cases, I can ask AI to generate an initial set of tests",
+        translation: "generate an initial set of",
         vietnamese: "tạo một bộ kiểm thử ban đầu",
       },
       {
@@ -42,12 +42,12 @@ export const AiProblem = {
       },
       {
         english: "That said, I’ve also seen teams rely too heavily on AI for almost everything",
-        translation: "rely too heavily on AI",
+        translation: "heavily on",
         vietnamese: "dựa quá nhiều vào AI",
       },
       {
         english: "Sometimes, they get to a point where nobody on the team really understands why the system behaves the way it does anymore.",
-        translation: "the way it does anymore",
+        translation: "the way it does",
         vietnamese: "lại hoạt động như vậy nữa",
       },
       {
@@ -57,12 +57,12 @@ export const AiProblem = {
       },
       {
         english: "So overall, I think AI is an incredibly powerful tool, and we should absolutely use it.",
-        translation: "incredibly powerful tool",
+        translation: "incredibly powerful",
         vietnamese: "công cụ vô cùng mạnh mẽ",
       },
       {
         english: "But we also need to use it responsibly and make sure we still understand the systems we’re building.",
-        translation: "use it responsibly",
+        translation: "responsibly",
         vietnamese: "sử dụng nó một cách có trách nhiệm",
       },
     ]
