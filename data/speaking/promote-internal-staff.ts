@@ -21,9 +21,14 @@ export const PromoteInternalStaff = {
         vietnamese: "yếu tố quan trọng",
       },
       {
-        english: "The reason is that different positions require different skill sets. For example, the skills needed to be a manager are quite different from those required to be a principal developer",
+        english: "The reason is that different positions require different skill sets.",
         translation: "skill sets",
         vietnamese: "các bộ kỹ năng khác nhau",
+      },
+      {
+        english: "For example, the skills needed to be a manager are quite different from those required to be a principal developer",
+        translation: "skills needed",
+        vietnamese: "kỹ năng cần thiết",
       },
       {
         english: "If a company promotes a principal developer to a managerial role simply because of their technical expertise, it could be a mistake.",
@@ -42,11 +47,11 @@ export const PromoteInternalStaff = {
       },
       {
         english: "That’s why I don’t think it matters much whether a candidate comes from inside or outside the company.",
-        translation: "comes",
-        vietnamese: "công việc",
+        translation: "comes from",
+        vietnamese: "đến từ",
       },
       {
-        english: "Ultimately, the key question is whether they are the right person for the job.",
+        english: "At the end of the day, the key question is whether they are the right fit for the job.",
         translation: "whether they are",
         vietnamese: "họ có phải là",
       },
