@@ -6,9 +6,14 @@ export const PromoteInternalStaff = {
     mode: 'flashcards',
     sentences: [
       {
-        english: "I believe that choosing someone for a position should be based primarily on their skills and suitability for the role, rather than whether they are an internal employee or an external candidate.",
+        english: "I believe that choosing someone for a position should be based primarily on their skills and suitability for the role,",
         translation: "based primarily on",
         vietnamese: "dựa chủ yếu vào",
+      },
+      {
+        english: "rather than whether they are an internal employee or an external candidate.",
+        translation: "rather than",
+        vietnamese: "thay vì",
       },
       {
         english: "Personally, I don’t think being an existing employee should be a major factor in the decision-making process.",
