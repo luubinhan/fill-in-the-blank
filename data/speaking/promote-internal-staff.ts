@@ -31,24 +31,14 @@ export const PromoteInternalStaff = {
         vietnamese: "một sai lầm",
       },
       {
-        english: "A principal developer is typically someone with strong technical knowledge who excels at solving complex engineering problems",
-        translation: "strong technical knowledge",
-        vietnamese: "kiến thức kỹ thuật vững chắc",
-      },
-      {
-        english: "However, a manager’s responsibilities are very different",
-        translation: "manager’s responsibilities",
-        vietnamese: "trách nhiệm của người quản lý",
+        english: "managers spend far less time dealing with technical problems and much more time working with people",
+        translation: "spend far less time",
+        vietnamese: "dành ít thời gian hơn",
       },
       {
         english: "Managers need to handle people-related issues, resolve conflicts within the team, motivate employees, and align the team with the company’s goals and vision",
         translation: "need to handle",
         vietnamese: "cần xử lý",
-      },
-      {
-        english: "As a result, managers spend far less time dealing with technical problems and much more time working with people",
-        translation: "spend far less time",
-        vietnamese: "dành ít thời gian hơn",
       },
       {
         english: "That’s why I don’t think it matters much whether a candidate comes from inside or outside the company.",
