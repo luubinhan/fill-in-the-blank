@@ -16,7 +16,7 @@ export const PromoteInternalStaff = {
         vietnamese: "thay vì",
       },
       {
-        english: "Personally, I don’t think being an existing employee should be a major factor in the decision-making process.",
+        english: "Personally, I don’t think being an existing employee should be a major factor in how we decide",
         translation: "major factor",
         vietnamese: "yếu tố quan trọng",
       },
